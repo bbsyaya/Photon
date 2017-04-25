@@ -8,12 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		597773A61EAF9AB10051EF1D /* Photon.h in Headers */ = {isa = PBXBuildFile; fileRef = 597773A41EAF9AB10051EF1D /* Photon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		597773B31EAFA0BB0051EF1D /* Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773B21EAFA0BB0051EF1D /* Unit_Tests.swift */; };
+		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		597773B61EAFA0BB0051EF1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 597773981EAF9AB10051EF1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 597773A01EAF9AB10051EF1D;
+			remoteInfo = Photon;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		597773B21EAFA0BB0051EF1D /* Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit_Tests.swift; sourceTree = "<group>"; };
+		597773B41EAFA0BB0051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +39,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		597773AD1EAFA0BB0051EF1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				597773A31EAF9AB10051EF1D /* Photon */,
+				597773B11EAFA0BB0051EF1D /* Unit Tests */,
 				597773A21EAF9AB10051EF1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				597773A11EAF9AB10051EF1D /* Photon.framework */,
+				597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -50,6 +75,15 @@
 				597773A51EAF9AB10051EF1D /* Info.plist */,
 			);
 			path = Photon;
+			sourceTree = "<group>";
+		};
+		597773B11EAFA0BB0051EF1D /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				597773B21EAFA0BB0051EF1D /* Unit_Tests.swift */,
+				597773B41EAFA0BB0051EF1D /* Info.plist */,
+			);
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +118,39 @@
 			productReference = 597773A11EAF9AB10051EF1D /* Photon.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		597773AF1EAFA0BB0051EF1D /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 597773BA1EAFA0BB0051EF1D /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				597773AC1EAFA0BB0051EF1D /* Sources */,
+				597773AD1EAFA0BB0051EF1D /* Frameworks */,
+				597773AE1EAFA0BB0051EF1D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				597773B71EAFA0BB0051EF1D /* PBXTargetDependency */,
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		597773981EAF9AB10051EF1D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Sam Symons";
 				TargetAttributes = {
 					597773A01EAF9AB10051EF1D = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					597773AF1EAFA0BB0051EF1D = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -112,12 +169,20 @@
 			projectRoot = "";
 			targets = (
 				597773A01EAF9AB10051EF1D /* Photon */,
+				597773AF1EAFA0BB0051EF1D /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		5977739F1EAF9AB10051EF1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		597773AE1EAFA0BB0051EF1D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -134,7 +199,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		597773AC1EAFA0BB0051EF1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				597773B31EAFA0BB0051EF1D /* Unit_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		597773B71EAFA0BB0051EF1D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 597773A01EAF9AB10051EF1D /* Photon */;
+			targetProxy = 597773B61EAFA0BB0051EF1D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		597773A71EAF9AB10051EF1D /* Debug */ = {
@@ -275,6 +356,30 @@
 			};
 			name = Release;
 		};
+		597773B81EAFA0BB0051EF1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Unit Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		597773B91EAFA0BB0051EF1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "Unit Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.samsymons.Unit-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -292,6 +397,15 @@
 			buildConfigurations = (
 				597773AA1EAF9AB10051EF1D /* Debug */,
 				597773AB1EAF9AB10051EF1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		597773BA1EAFA0BB0051EF1D /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				597773B81EAFA0BB0051EF1D /* Debug */,
+				597773B91EAFA0BB0051EF1D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
