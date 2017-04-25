@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		597773A61EAF9AB10051EF1D /* Photon.h in Headers */ = {isa = PBXBuildFile; fileRef = 597773A41EAF9AB10051EF1D /* Photon.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		597773B31EAFA0BB0051EF1D /* Unit_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773B21EAFA0BB0051EF1D /* Unit_Tests.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
+		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
+		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
+		597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BF1EAFB47F0051EF1D /* VectorTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,8 +29,9 @@
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		597773B21EAFA0BB0051EF1D /* Unit_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unit_Tests.swift; sourceTree = "<group>"; };
 		597773B41EAFA0BB0051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		597773BC1EAFB1750051EF1D /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = Math/Vector.swift; sourceTree = "<group>"; };
+		597773BF1EAFB47F0051EF1D /* VectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 		597773A31EAF9AB10051EF1D /* Photon */ = {
 			isa = PBXGroup;
 			children = (
+				597773BB1EAFA7120051EF1D /* Math */,
 				597773A41EAF9AB10051EF1D /* Photon.h */,
 				597773A51EAF9AB10051EF1D /* Info.plist */,
 			);
@@ -80,10 +84,18 @@
 		597773B11EAFA0BB0051EF1D /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				597773B21EAFA0BB0051EF1D /* Unit_Tests.swift */,
+				597773BF1EAFB47F0051EF1D /* VectorTests.swift */,
 				597773B41EAFA0BB0051EF1D /* Info.plist */,
 			);
 			path = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		597773BB1EAFA7120051EF1D /* Math */ = {
+			isa = PBXGroup;
+			children = (
+				597773BC1EAFB1750051EF1D /* Vector.swift */,
+			);
+			name = Math;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +160,7 @@
 				TargetAttributes = {
 					597773A01EAF9AB10051EF1D = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					597773AF1EAFA0BB0051EF1D = {
@@ -196,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				597773BD1EAFB1750051EF1D /* Vector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,7 +217,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597773B31EAFA0BB0051EF1D /* Unit_Tests.swift in Sources */,
+				597773BE1EAFB1750051EF1D /* Vector.swift in Sources */,
+				597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +334,7 @@
 		597773AA1EAF9AB10051EF1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -332,6 +348,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.samsymons.photon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -339,6 +356,7 @@
 		597773AB1EAF9AB10051EF1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -359,6 +377,7 @@
 		597773B81EAFA0BB0051EF1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
@@ -371,6 +390,7 @@
 		597773B91EAFA0BB0051EF1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "Unit Tests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";

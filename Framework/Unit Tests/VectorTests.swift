@@ -1,4 +1,4 @@
-// Unit_Tests.swift
+// VectorTests.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -19,30 +19,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+import Foundation
 import XCTest
 
-class Unit_Tests: XCTestCase {
-    
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+
+// MARK: - Vector2D
+
+final class Vector2DTests: XCTestCase {
+
+  func testVector2DInitialization() {
+    let vector: Vector2D<Float> = Vector2D(x: 1.0, y: 2.0)
+
+    XCTAssertEqual(vector.x, 1.0)
+    XCTAssertEqual(vector.y, 2.0)
+  }
+
+}
+
+
+// MARK: - Vector3D
+
+final class Vector3DTests: XCTestCase {
+
+  func testVector2DInitialization() {
+    let vector: Vector3D<Float> = Vector3D(x: 1.0, y: 2.0, z: 3.0)
+
+    XCTAssertEqual(vector.x, 1.0)
+    XCTAssertEqual(vector.y, 2.0)
+    XCTAssertEqual(vector.z, 3.0)
+  }
+  
 }
