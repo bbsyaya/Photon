@@ -34,6 +34,12 @@ final class Vector2DTests: XCTestCase {
     XCTAssertEqual(vector.y, 2.0)
   }
 
+  func testStaticHelperFunctions() {
+    XCTAssertEqual(Vector2D.zero, Vector2D(0.0, 0.0))
+    XCTAssertEqual(Vector2D.x, Vector2D(1.0, 0.0))
+    XCTAssertEqual(Vector2D.y, Vector2D(0.0, 1.0))
+  }
+
   func testVectorAddition() {
     let v1 = Vector2D(1.0, 2.0)
     let v2 = Vector2D(3.0, 4.0)
@@ -99,6 +105,13 @@ final class Vector3DTests: XCTestCase {
     XCTAssertEqual(vector.x, 1.0)
     XCTAssertEqual(vector.y, 2.0)
     XCTAssertEqual(vector.z, 3.0)
+  }
+
+  func testStaticHelperFunctions() {
+    XCTAssertEqual(Vector3D.zero, Vector3D(0.0, 0.0, 0.0))
+    XCTAssertEqual(Vector3D.x, Vector3D(1.0, 0.0, 0.0))
+    XCTAssertEqual(Vector3D.y, Vector3D(0.0, 1.0, 0.0))
+    XCTAssertEqual(Vector3D.z, Vector3D(0.0, 0.0, 1.0))
   }
 
   func testVectorAddition() {
