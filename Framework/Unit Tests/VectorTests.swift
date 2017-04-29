@@ -27,11 +27,39 @@ import XCTest
 
 final class Vector2DTests: XCTestCase {
 
-  func testVector2DInitialization() {
+  func testInitialization() {
     let vector = Vector2D(1.0, 2.0)
 
     XCTAssertEqual(vector.x, 1.0)
     XCTAssertEqual(vector.y, 2.0)
+  }
+
+  func testVectorAddition() {
+    let v1 = Vector2D(1.0, 2.0)
+    let v2 = Vector2D(3.0, 4.0)
+
+    XCTAssertEqual(v1 + v2, Vector2D(4.0, 6.0))
+  }
+
+  func testVectorSubtraction() {
+    let v1 = Vector2D(10.0, 5.0)
+    let v2 = Vector2D(5.0, 5.0)
+
+    XCTAssertEqual(v1 - v2, Vector2D(5.0, 0))
+  }
+
+  func testVectorMultiplication() {
+    let v1 = Vector2D(1.0, 2.0)
+    let v2 = Vector2D(1.0, 3.0)
+
+    XCTAssertEqual(v1 * v2, Vector2D(1.0, 6.0))
+  }
+
+  func testVectorDivision() {
+    let v1 = Vector2D(1.0, 3.0)
+    let v2 = Vector2D(1.0, 2.0)
+
+    XCTAssertEqual(v1 / v2, Vector2D(1.0, 1.5))
   }
 
 }
@@ -41,12 +69,40 @@ final class Vector2DTests: XCTestCase {
 
 final class Vector3DTests: XCTestCase {
 
-  func testVector2DInitialization() {
+  func testInitialization() {
     let vector = Vector3D(1.0, 2.0, 3.0)
 
     XCTAssertEqual(vector.x, 1.0)
     XCTAssertEqual(vector.y, 2.0)
     XCTAssertEqual(vector.z, 3.0)
+  }
+
+  func testVectorAddition() {
+    let v1 = Vector3D(1.0, 2.0, 3.0)
+    let v2 = Vector3D(4.0, 5.0, 6.0)
+
+    XCTAssertEqual(v1 + v2, Vector3D(5.0, 7.0, 9.0))
+  }
+
+  func testVectorSubtraction() {
+    let v1 = Vector3D(10.0, 11.0, 12.0)
+    let v2 = Vector3D(5.0, 6.0, 7.0)
+
+    XCTAssertEqual(v1 - v2, Vector3D(5.0, 5.0, 5.0))
+  }
+
+  func testVectorMultiplication() {
+    let v1 = Vector3D(1.0, 2.0, 3.0)
+    let v2 = Vector3D(1.0, 3.0, 0.0)
+
+    XCTAssertEqual(v1 * v2, Vector3D(1.0, 6.0, 0.0))
+  }
+
+  func testVectorDivision() {
+    let v1 = Vector3D(1.0, 3.0, 10.0)
+    let v2 = Vector3D(1.0, 2.0, 5.0)
+
+    XCTAssertEqual(v1 / v2, Vector3D(1.0, 1.5, 2.0))
   }
   
 }
