@@ -33,12 +33,16 @@
  */
 
 import Foundation
+import PlaygroundSupport
 import Photon
 
 let v1 = Vector2D(1.0, 2.0)
 let v2 = Vector2D(3.0, 4.0)
 
 let vectorAddition = v1 + v2
+
+let vectorVisualization = VectorVisualizationView(vectors: [v1, v2])
+PlaygroundPage.current.liveView = vectorVisualization
 
 //:  ****
 //:  [Next](@next)

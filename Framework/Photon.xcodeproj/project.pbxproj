@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		597773A61EAF9AB10051EF1D /* Photon.h in Headers */ = {isa = PBXBuildFile; fileRef = 597773A41EAF9AB10051EF1D /* Photon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		593D4DE51EB543DB00BC0591 /* Photon.h in Headers */ = {isa = PBXBuildFile; fileRef = 597773A41EAF9AB10051EF1D /* Photon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -105,7 +105,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				597773A61EAF9AB10051EF1D /* Photon.h in Headers */,
+				593D4DE51EB543DB00BC0591 /* Photon.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +337,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -359,7 +359,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				DEFINES_MODULE = NO;
+				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
