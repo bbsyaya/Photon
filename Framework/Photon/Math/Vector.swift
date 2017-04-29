@@ -21,19 +21,75 @@
 
 import Foundation
 
+public typealias Scalar = Float
 
 // MARK: - Vector2D
 
-struct Vector2D<Element> {
-  var x: Element
-  var y: Element
+public struct Vector2D {
+  var x: Float
+  var y: Float
+
+  public init(_ x: Scalar, _ y: Scalar) {
+    self.x = x
+    self.y = y
+  }
+}
+
+extension Vector2D: Equatable {
+  public static func ==(lhs: Vector2D, rhs: Vector2D) -> Bool {
+    return lhs.x == rhs.x && lhs.y == rhs.y
+  }
+
+  public static func +(lhs: Vector2D, rhs: Vector2D) -> Vector2D {
+    return Vector2D(lhs.x + rhs.x, lhs.y + rhs.y)
+  }
+
+  public static func -(lhs: Vector2D, rhs: Vector2D) -> Vector2D {
+    return Vector2D(lhs.x - rhs.x, lhs.y - rhs.y)
+  }
+
+  public static func *(lhs: Vector2D, rhs: Vector2D) -> Vector2D {
+    return Vector2D(lhs.x * rhs.x, lhs.y * rhs.y)
+  }
+
+  public static func /(lhs: Vector2D, rhs: Vector2D) -> Vector2D {
+    return Vector2D(lhs.x / rhs.x, lhs.y / rhs.y)
+  }
 }
 
 
 // MARK: - Vector3D
 
-struct Vector3D<Element> {
-  var x: Element
-  var y: Element
-  var z: Element
+public struct Vector3D {
+  var x: Float
+  var y: Float
+  var z: Float
+
+  public init(_ x: Scalar, _ y: Scalar, _ z: Scalar) {
+    self.x = x
+    self.y = y
+    self.z = z
+  }
+}
+
+extension Vector3D: Equatable {
+  public static func ==(lhs: Vector3D, rhs: Vector3D) -> Bool {
+    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
+  }
+
+  public static func +(lhs: Vector3D, rhs: Vector3D) -> Vector3D {
+    return Vector3D(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
+  }
+
+  public static func -(lhs: Vector3D, rhs: Vector3D) -> Vector3D {
+    return Vector3D(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z)
+  }
+
+  public static func *(lhs: Vector3D, rhs: Vector3D) -> Vector3D {
+    return Vector3D(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z)
+  }
+
+  public static func /(lhs: Vector3D, rhs: Vector3D) -> Vector3D {
+    return Vector3D(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z)
+  }
 }

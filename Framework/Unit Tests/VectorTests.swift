@@ -28,7 +28,7 @@ import XCTest
 final class Vector2DTests: XCTestCase {
 
   func testVector2DInitialization() {
-    let vector: Vector2D<Float> = Vector2D(x: 1.0, y: 2.0)
+    let vector = Vector2D(1.0, 2.0)
 
     XCTAssertEqual(vector.x, 1.0)
     XCTAssertEqual(vector.y, 2.0)
@@ -42,7 +42,7 @@ final class Vector2DTests: XCTestCase {
 final class Vector3DTests: XCTestCase {
 
   func testVector2DInitialization() {
-    let vector: Vector3D<Float> = Vector3D(x: 1.0, y: 2.0, z: 3.0)
+    let vector = Vector3D(1.0, 2.0, 3.0)
 
     XCTAssertEqual(vector.x, 1.0)
     XCTAssertEqual(vector.y, 2.0)
