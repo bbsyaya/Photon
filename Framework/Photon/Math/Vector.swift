@@ -102,6 +102,12 @@ extension Vector2D: Equatable {
   }
 }
 
+extension Vector2D: CustomStringConvertible {
+  public var description: String {
+    return "(x: \(x), y: \(y))"
+  }
+}
+
 
 // MARK: - Vector3D
 
@@ -182,5 +188,11 @@ extension Vector3D: Equatable {
 
   public static func ·(lhs: Vector3D, rhs: Vector3D) -> Float {
     return lhs.dot(rhs)
+  }
+}
+
+extension Vector3D: CustomStringConvertible {
+  public var description: String {
+    return "(x: \(x), y: \(y), z: \(z))"
   }
 }
