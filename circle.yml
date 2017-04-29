@@ -1,3 +1,13 @@
 machine:
   xcode:
     version: 8.2
+
+test:
+  override:
+    - set -o pipefail &&
+      xcodebuild
+      -workspace Photon.xcworkspace
+      -scheme "Photon"
+      clean build test |
+      tee $CIRCLE_ARTIFACTS/xcode_raw.log |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
