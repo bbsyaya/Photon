@@ -21,8 +21,6 @@
 
 import Foundation
 
-public typealias Scalar = Float
-
 // MARK: - Vector2D
 
 public struct Vector2D {
@@ -33,16 +31,16 @@ public struct Vector2D {
   var x: Float
   var y: Float
 
-  public init(_ x: Scalar, _ y: Scalar) {
+  public init(_ x: Float, _ y: Float) {
     self.x = x
     self.y = y
   }
 
-  public var lengthSquared: Scalar {
+  public var lengthSquared: Float {
     return x * x + y * y
   }
 
-  public var length: Scalar {
+  public var length: Float {
     return sqrt(lengthSquared)
   }
 
@@ -50,7 +48,7 @@ public struct Vector2D {
     return self / sqrt(lengthSquared)
   }
 
-  public func dot(_ vector: Vector2D) -> Scalar {
+  public func dot(_ vector: Vector2D) -> Float {
     return x * vector.x + y * vector.y
   }
 }
@@ -79,27 +77,27 @@ extension Vector2D: Equatable {
     return Vector2D(lhs.x / rhs.x, lhs.y / rhs.y)
   }
 
-  // MARK: Scalar Arithmetic
+  // MARK: Float Arithmetic
 
-  public static func +(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+  public static func +(lhs: Vector2D, rhs: Float) -> Vector2D {
     return Vector2D(lhs.x + rhs, lhs.y + rhs)
   }
 
-  public static func -(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+  public static func -(lhs: Vector2D, rhs: Float) -> Vector2D {
     return Vector2D(lhs.x - rhs, lhs.y - rhs)
   }
 
-  public static func *(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+  public static func *(lhs: Vector2D, rhs: Float) -> Vector2D {
     return Vector2D(lhs.x * rhs, lhs.y * rhs)
   }
 
-  public static func /(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+  public static func /(lhs: Vector2D, rhs: Float) -> Vector2D {
     return Vector2D(lhs.x / rhs, lhs.y / rhs)
   }
 
   // MARK: Dot Product
 
-  public static func ·(lhs: Vector2D, rhs: Vector2D) -> Scalar {
+  public static func ·(lhs: Vector2D, rhs: Vector2D) -> Float {
     return lhs.dot(rhs)
   }
 }
@@ -117,17 +115,17 @@ public struct Vector3D {
   var y: Float
   var z: Float
 
-  public init(_ x: Scalar, _ y: Scalar, _ z: Scalar) {
+  public init(_ x: Float, _ y: Float, _ z: Float) {
     self.x = x
     self.y = y
     self.z = z
   }
 
-  public var lengthSquared: Scalar {
+  public var lengthSquared: Float {
     return x * x + y * y + z * z
   }
 
-  public var length: Scalar {
+  public var length: Float {
     return sqrt(lengthSquared)
   }
 
@@ -135,7 +133,7 @@ public struct Vector3D {
     return self / sqrt(lengthSquared)
   }
 
-  public func dot(_ vector: Vector3D) -> Scalar {
+  public func dot(_ vector: Vector3D) -> Float {
     return x * vector.x + y * vector.y + z * vector.z
   }
 }
@@ -162,27 +160,27 @@ extension Vector3D: Equatable {
     return Vector3D(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z)
   }
 
-  // MARK: Scalar Arithmetic
+  // MARK: Float Arithmetic
 
-  public static func +(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+  public static func +(lhs: Vector3D, rhs: Float) -> Vector3D {
     return Vector3D(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs)
   }
 
-  public static func -(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+  public static func -(lhs: Vector3D, rhs: Float) -> Vector3D {
     return Vector3D(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs)
   }
 
-  public static func *(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+  public static func *(lhs: Vector3D, rhs: Float) -> Vector3D {
     return Vector3D(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs)
   }
 
-  public static func /(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+  public static func /(lhs: Vector3D, rhs: Float) -> Vector3D {
     return Vector3D(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
   }
 
   // MARK: Dot Product
 
-  public static func ·(lhs: Vector3D, rhs: Vector3D) -> Scalar {
+  public static func ·(lhs: Vector3D, rhs: Vector3D) -> Float {
     return lhs.dot(rhs)
   }
 }
