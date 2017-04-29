@@ -26,6 +26,10 @@ public typealias Scalar = Float
 // MARK: - Vector2D
 
 public struct Vector2D {
+  public static let zero = Vector2D(0, 0)
+  public static let x = Vector2D(1, 0)
+  public static let y = Vector2D(0, 1)
+
   var x: Float
   var y: Float
 
@@ -36,6 +40,9 @@ public struct Vector2D {
 }
 
 extension Vector2D: Equatable {
+
+  // MARK: 2D Vector Arithmetic
+
   public static func ==(lhs: Vector2D, rhs: Vector2D) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y
   }
@@ -55,12 +62,35 @@ extension Vector2D: Equatable {
   public static func /(lhs: Vector2D, rhs: Vector2D) -> Vector2D {
     return Vector2D(lhs.x / rhs.x, lhs.y / rhs.y)
   }
+
+  // MARK: Scalar Arithmetic
+
+  public static func +(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+    return Vector2D(lhs.x + rhs, lhs.y + rhs)
+  }
+
+  public static func -(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+    return Vector2D(lhs.x - rhs, lhs.y - rhs)
+  }
+
+  public static func *(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+    return Vector2D(lhs.x * rhs, lhs.y * rhs)
+  }
+
+  public static func /(lhs: Vector2D, rhs: Scalar) -> Vector2D {
+    return Vector2D(lhs.x / rhs, lhs.y / rhs)
+  }
 }
 
 
 // MARK: - Vector3D
 
 public struct Vector3D {
+  public static let zero = Vector3D(0, 0, 0)
+  public static let x = Vector3D(1, 0, 0)
+  public static let y = Vector3D(0, 1, 0)
+  public static let z = Vector3D(0, 0, 1)
+
   var x: Float
   var y: Float
   var z: Float
@@ -73,6 +103,7 @@ public struct Vector3D {
 }
 
 extension Vector3D: Equatable {
+
   public static func ==(lhs: Vector3D, rhs: Vector3D) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
   }
@@ -91,5 +122,23 @@ extension Vector3D: Equatable {
 
   public static func /(lhs: Vector3D, rhs: Vector3D) -> Vector3D {
     return Vector3D(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z)
+  }
+
+  // MARK: Scalar Arithmetic
+
+  public static func +(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+    return Vector3D(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs)
+  }
+
+  public static func -(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+    return Vector3D(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs)
+  }
+
+  public static func *(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+    return Vector3D(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs)
+  }
+
+  public static func /(lhs: Vector3D, rhs: Scalar) -> Vector3D {
+    return Vector3D(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
   }
 }
