@@ -62,6 +62,30 @@ final class Vector2DTests: XCTestCase {
     XCTAssertEqual(v1 / v2, Vector2D(1.0, 1.5))
   }
 
+  func testScalarAddition() {
+    let vector = Vector2D(1.0, 2.0)
+
+    XCTAssertEqual(vector + 3, Vector2D(4.0, 5.0))
+  }
+
+  func testScalarSubtraction() {
+    let vector = Vector2D(1.0, 2.0)
+
+    XCTAssertEqual(vector - 1, Vector2D(0, 1.0))
+  }
+
+  func testScalarMultiplication() {
+    let vector = Vector2D(1.0, 2.0)
+
+    XCTAssertEqual(vector * 3, Vector2D(3.0, 6.0))
+  }
+
+  func testScalarDivision() {
+    let vector = Vector2D(1.0, 2.0)
+
+    XCTAssertEqual(vector / 2, Vector2D(0.5, 1.0))
+  }
+
 }
 
 
@@ -103,6 +127,30 @@ final class Vector3DTests: XCTestCase {
     let v2 = Vector3D(1.0, 2.0, 5.0)
 
     XCTAssertEqual(v1 / v2, Vector3D(1.0, 1.5, 2.0))
+  }
+
+  func testScalarAddition() {
+    let vector = Vector3D(1.0, 2.0, 3.0)
+
+    XCTAssertEqual(vector + 3, Vector3D(4.0, 5.0, 6.0))
+  }
+
+  func testScalarSubtraction() {
+    let vector = Vector3D(1.0, 2.0, 3.0)
+
+    XCTAssertEqual(vector - 1, Vector3D(0, 1.0, 2.0))
+  }
+
+  func testScalarMultiplication() {
+    let vector = Vector3D(1.0, 2.0, 3.0)
+
+    XCTAssertEqual(vector * 3, Vector3D(3.0, 6.0, 9.0))
+  }
+
+  func testScalarDivision() {
+    let vector = Vector3D(1.0, 2.0, 3.0)
+
+    XCTAssertEqual(vector / 2, Vector3D(0.5, 1.0, 1.5))
   }
   
 }
