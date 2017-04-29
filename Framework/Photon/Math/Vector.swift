@@ -45,6 +45,14 @@ public struct Vector2D {
   public var length: Scalar {
     return sqrt(lengthSquared)
   }
+
+  public func normalized() -> Vector2D {
+    return self / sqrt(lengthSquared)
+  }
+
+  public func dot(_ vector: Vector2D) -> Scalar {
+    return x * vector.x + y * vector.y
+  }
 }
 
 extension Vector2D: Equatable {
@@ -88,6 +96,12 @@ extension Vector2D: Equatable {
   public static func /(lhs: Vector2D, rhs: Scalar) -> Vector2D {
     return Vector2D(lhs.x / rhs, lhs.y / rhs)
   }
+
+  // MARK: Dot Product
+
+  public static func ·(lhs: Vector2D, rhs: Vector2D) -> Scalar {
+    return lhs.dot(rhs)
+  }
 }
 
 
@@ -115,6 +129,14 @@ public struct Vector3D {
 
   public var length: Scalar {
     return sqrt(lengthSquared)
+  }
+
+  public func normalized() -> Vector3D {
+    return self / sqrt(lengthSquared)
+  }
+
+  public func dot(_ vector: Vector3D) -> Scalar {
+    return x * vector.x + y * vector.y + z * vector.z
   }
 }
 
@@ -156,5 +178,11 @@ extension Vector3D: Equatable {
 
   public static func /(lhs: Vector3D, rhs: Scalar) -> Vector3D {
     return Vector3D(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
+  }
+
+  // MARK: Dot Product
+
+  public static func ·(lhs: Vector3D, rhs: Vector3D) -> Scalar {
+    return lhs.dot(rhs)
   }
 }

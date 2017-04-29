@@ -48,6 +48,25 @@ final class Vector2DTests: XCTestCase {
     XCTAssertEqual(Vector2D(3.0, 4.0).length, 5)
   }
 
+  func testNormalization() {
+    XCTAssertEqual(Vector2D(1.0, 0.0).normalized(), Vector2D(1.0, 0.0))
+    XCTAssertEqual(Vector2D(0.0, 1.0).normalized(), Vector2D(0.0, 1.0))
+
+    XCTAssertEqual(Vector2D(30.0, 0.0).normalized(), Vector2D(1.0, 0.0))
+    XCTAssertEqual(Vector2D(0.0, 30.0).normalized(), Vector2D(0.0, 1.0))
+
+    XCTAssertEqual(Vector2D(5.0, 5.0).normalized(), Vector2D(5.0 / sqrt(50), 5.0 / sqrt(50)))
+  }
+
+  func testDot() {
+    // Orthogonal vectors should return 0.
+    XCTAssertEqual(Vector2D(1.0, 0.0).dot(Vector2D(0.0, 1.0)), 0)
+    XCTAssertEqual(Vector2D(0.0, 1.0).dot(Vector2D(1.0, 0.0)), 0)
+
+    // Parallel vectors should return 1.
+    XCTAssertEqual(Vector2D(1.0, 0.0).dot(Vector2D(1.0, 0.0)), 1)
+  }
+
   func testVectorAddition() {
     let v1 = Vector2D(1.0, 2.0)
     let v2 = Vector2D(3.0, 4.0)
@@ -128,6 +147,28 @@ final class Vector3DTests: XCTestCase {
 
   func testLength() {
     XCTAssertEqual(Vector3D(1.0, 2.0, 3.0).length, sqrt(14))
+  }
+
+  func testNormalization() {
+    XCTAssertEqual(Vector3D(1.0, 0.0, 0.0).normalized(), Vector3D(1.0, 0.0, 0.0))
+    XCTAssertEqual(Vector3D(0.0, 1.0, 0.0).normalized(), Vector3D(0.0, 1.0, 0.0))
+    XCTAssertEqual(Vector3D(0.0, 0.0, 1.0).normalized(), Vector3D(0.0, 0.0, 1.0))
+
+    XCTAssertEqual(Vector3D(30.0, 0.0, 0.0).normalized(), Vector3D(1.0, 0.0, 0.0))
+    XCTAssertEqual(Vector3D(0.0, 30.0, 0.0).normalized(), Vector3D(0.0, 1.0, 0.0))
+    XCTAssertEqual(Vector3D(0.0, 0.0, 30.0).normalized(), Vector3D(0.0, 0.0, 1.0))
+
+    XCTAssertEqual(Vector3D(5.0, 5.0, 5.0).normalized(), Vector3D(5.0 / sqrt(75), 5.0 / sqrt(75), 5.0 / sqrt(75)))
+  }
+
+  func testDot() {
+    // Orthogonal vectors should return 0.
+    XCTAssertEqual(Vector3D(1.0, 0.0, 0.0).dot(Vector3D(0.0, 0.0, 1.0)), 0)
+    XCTAssertEqual(Vector3D(0.0, 1.0, 0.0).dot(Vector3D(1.0, 0.0, 0.0)), 0)
+    XCTAssertEqual(Vector3D(0.0, 0.0, 1.0).dot(Vector3D(0.0, 1.0, 0.0)), 0)
+
+    // Parallel vectors should return 1, providing they are normalized.
+    XCTAssertEqualWithAccuracy(Vector3D(1.0, 0.0, 1.0).normalized().dot(Vector3D(1.0, 0.0, 1.0).normalized()), 1, accuracy: 0.001)
   }
 
   func testVectorAddition() {
