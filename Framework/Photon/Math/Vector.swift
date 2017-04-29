@@ -37,6 +37,14 @@ public struct Vector2D {
     self.x = x
     self.y = y
   }
+
+  public var lengthSquared: Scalar {
+    return x * x + y * y
+  }
+
+  public var length: Scalar {
+    return sqrt(lengthSquared)
+  }
 }
 
 extension Vector2D: Equatable {
@@ -99,6 +107,14 @@ public struct Vector3D {
     self.x = x
     self.y = y
     self.z = z
+  }
+
+  public var lengthSquared: Scalar {
+    return x * x + y * y + z * z
+  }
+
+  public var length: Scalar {
+    return sqrt(lengthSquared)
   }
 }
 

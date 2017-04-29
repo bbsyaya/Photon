@@ -40,6 +40,14 @@ final class Vector2DTests: XCTestCase {
     XCTAssertEqual(Vector2D.y, Vector2D(0.0, 1.0))
   }
 
+  func testLengthSquared() {
+    XCTAssertEqual(Vector2D(3.0, 4.0).lengthSquared, 25)
+  }
+
+  func testLength() {
+    XCTAssertEqual(Vector2D(3.0, 4.0).length, 5)
+  }
+
   func testVectorAddition() {
     let v1 = Vector2D(1.0, 2.0)
     let v2 = Vector2D(3.0, 4.0)
@@ -112,6 +120,14 @@ final class Vector3DTests: XCTestCase {
     XCTAssertEqual(Vector3D.x, Vector3D(1.0, 0.0, 0.0))
     XCTAssertEqual(Vector3D.y, Vector3D(0.0, 1.0, 0.0))
     XCTAssertEqual(Vector3D.z, Vector3D(0.0, 0.0, 1.0))
+  }
+
+  func testLengthSquared() {
+    XCTAssertEqual(Vector3D(1.0, 2.0, 3.0).lengthSquared, 14)
+  }
+
+  func testLength() {
+    XCTAssertEqual(Vector3D(1.0, 2.0, 3.0).length, sqrt(14))
   }
 
   func testVectorAddition() {
