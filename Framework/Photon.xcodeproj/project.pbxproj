@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		593D4DE51EB543DB00BC0591 /* Photon.h in Headers */ = {isa = PBXBuildFile; fileRef = 597773A41EAF9AB10051EF1D /* Photon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		593D4DE81EB56BE500BC0591 /* GeometricObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DE71EB56BE500BC0591 /* GeometricObject.swift */; };
+		593D4DE91EB56BE500BC0591 /* GeometricObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DE71EB56BE500BC0591 /* GeometricObject.swift */; };
+		593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DEC1EB56CFE00BC0591 /* Ray.swift */; };
+		593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DEC1EB56CFE00BC0591 /* Ray.swift */; };
+		593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DEF1EB56E6F00BC0591 /* Point.swift */; };
+		593D4DF11EB56E6F00BC0591 /* Point.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DEF1EB56E6F00BC0591 /* Point.swift */; };
+		593D4DF31EB56F9D00BC0591 /* PointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DF21EB56F9D00BC0591 /* PointTests.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -25,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		593D4DE71EB56BE500BC0591 /* GeometricObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeometricObject.swift; path = Shapes/GeometricObject.swift; sourceTree = "<group>"; };
+		593D4DEC1EB56CFE00BC0591 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ray.swift; path = Primitives/Ray.swift; sourceTree = "<group>"; };
+		593D4DEF1EB56E6F00BC0591 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Math/Point.swift; sourceTree = "<group>"; };
+		593D4DF21EB56F9D00BC0591 /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -53,6 +64,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		593D4DE61EB56BC400BC0591 /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				593D4DE71EB56BE500BC0591 /* GeometricObject.swift */,
+			);
+			name = Shapes;
+			sourceTree = "<group>";
+		};
+		593D4DEA1EB56CD700BC0591 /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Materials;
+			sourceTree = "<group>";
+		};
+		593D4DEB1EB56CDC00BC0591 /* Primitives */ = {
+			isa = PBXGroup;
+			children = (
+				593D4DEC1EB56CFE00BC0591 /* Ray.swift */,
+			);
+			name = Primitives;
+			sourceTree = "<group>";
+		};
 		597773971EAF9AB10051EF1D = {
 			isa = PBXGroup;
 			children = (
@@ -74,7 +108,10 @@
 		597773A31EAF9AB10051EF1D /* Photon */ = {
 			isa = PBXGroup;
 			children = (
+				593D4DEA1EB56CD700BC0591 /* Materials */,
 				597773BB1EAFA7120051EF1D /* Math */,
+				593D4DEB1EB56CDC00BC0591 /* Primitives */,
+				593D4DE61EB56BC400BC0591 /* Shapes */,
 				597773A41EAF9AB10051EF1D /* Photon.h */,
 				597773A51EAF9AB10051EF1D /* Info.plist */,
 			);
@@ -85,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				597773BF1EAFB47F0051EF1D /* VectorTests.swift */,
+				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
 				597773B41EAFA0BB0051EF1D /* Info.plist */,
 			);
 			path = "Unit Tests";
@@ -93,6 +131,7 @@
 		597773BB1EAFA7120051EF1D /* Math */ = {
 			isa = PBXGroup;
 			children = (
+				593D4DEF1EB56E6F00BC0591 /* Point.swift */,
 				597773BC1EAFB1750051EF1D /* Vector.swift */,
 			);
 			name = Math;
@@ -209,7 +248,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
+				593D4DE81EB56BE500BC0591 /* GeometricObject.swift in Sources */,
 				597773BD1EAFB1750051EF1D /* Vector.swift in Sources */,
+				593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,8 +259,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593D4DF31EB56F9D00BC0591 /* PointTests.swift in Sources */,
+				593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */,
+				593D4DF11EB56E6F00BC0591 /* Point.swift in Sources */,
 				597773BE1EAFB1750051EF1D /* Vector.swift in Sources */,
 				597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */,
+				593D4DE91EB56BE500BC0591 /* GeometricObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
