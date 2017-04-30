@@ -33,7 +33,7 @@
 
 /* Begin PBXFileReference section */
 		593D4DE71EB56BE500BC0591 /* GeometricObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeometricObject.swift; path = Shapes/GeometricObject.swift; sourceTree = "<group>"; };
-		593D4DEC1EB56CFE00BC0591 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ray.swift; path = Primitives/Ray.swift; sourceTree = "<group>"; };
+		593D4DEC1EB56CFE00BC0591 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ray.swift; path = Core/Ray.swift; sourceTree = "<group>"; };
 		593D4DEF1EB56E6F00BC0591 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Point.swift; path = Math/Point.swift; sourceTree = "<group>"; };
 		593D4DF21EB56F9D00BC0591 /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,12 +79,12 @@
 			name = Materials;
 			sourceTree = "<group>";
 		};
-		593D4DEB1EB56CDC00BC0591 /* Primitives */ = {
+		593D4DEB1EB56CDC00BC0591 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				593D4DEC1EB56CFE00BC0591 /* Ray.swift */,
 			);
-			name = Primitives;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		597773971EAF9AB10051EF1D = {
@@ -110,7 +110,7 @@
 			children = (
 				593D4DEA1EB56CD700BC0591 /* Materials */,
 				597773BB1EAFA7120051EF1D /* Math */,
-				593D4DEB1EB56CDC00BC0591 /* Primitives */,
+				593D4DEB1EB56CDC00BC0591 /* Core */,
 				593D4DE61EB56BC400BC0591 /* Shapes */,
 				597773A41EAF9AB10051EF1D /* Photon.h */,
 				597773A51EAF9AB10051EF1D /* Info.plist */,
