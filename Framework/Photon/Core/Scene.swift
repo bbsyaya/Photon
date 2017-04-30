@@ -21,9 +21,14 @@
 
 import Foundation
 
-public struct Ray {
-  var origin: Point3D
-  var direction: Vector3D
+public final class Scene {
+  private var objects: [GeometricObject] = []
 
-  var time: Float = 0.0
+  public func add(object: GeometricObject) {
+    objects.append(object)
+  }
+
+  public func add(objects objectArray: [GeometricObject]) {
+    objects.append(contentsOf: objectArray)
+  }
 }

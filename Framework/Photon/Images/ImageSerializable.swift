@@ -1,4 +1,4 @@
-// Scene.swift
+// ImageSerializable.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,9 +21,8 @@
 
 import Foundation
 
-public struct Ray {
-  var origin: Point3D
-  var direction: Vector3D
+public typealias ImageSerializableCompletion = ((_ path: NSURL?) -> Void)
 
-  var time: Float = 0.0
+public protocol ImageSerializable {
+  func serialize(image: Image, named: String, completion: ImageSerializableCompletion) -> Bool
 }
