@@ -35,13 +35,19 @@ public struct PixelData {
   var g: UInt8
   var b: UInt8
   var a: UInt8 = 255
+
+  init(r: UInt8, g: UInt8, b: UInt8) {
+    self.r = r
+    self.g = g
+    self.b = b
+  }
 }
 
 public struct Image {
   private static let colorSpace = CGColorSpaceCreateDeviceRGB()
   private static let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
 
-  public static func imageFromARGB32Bitmap(pixels: [PixelData], width: Int, height: Int) -> PlatformImage? {
+  public static func image(from pixels: [PixelData], width: Int, height: Int) -> PlatformImage? {
     let bitsPerComponent: Int = 8
     let bitsPerPixel: Int = 32
 
