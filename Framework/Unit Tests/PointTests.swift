@@ -28,10 +28,10 @@ import XCTest
 final class Point2DTests: XCTestCase {
 
   func testInitialization() {
-    let vector = Point2D(1.0, 2.0)
+    let point = Point2D(1.0, 2.0)
 
-    XCTAssertEqual(vector.x, 1.0)
-    XCTAssertEqual(vector.y, 2.0)
+    XCTAssertEqual(point.x, 1.0)
+    XCTAssertEqual(point.y, 2.0)
   }
 
   func testStaticHelperFunctions() {
@@ -67,27 +67,27 @@ final class Point2DTests: XCTestCase {
   }
 
   func testScalarAddition() {
-    let vector = Point2D(1.0, 2.0)
+    let point = Point2D(1.0, 2.0)
 
-    XCTAssertEqual(vector + 3, Point2D(4.0, 5.0))
+    XCTAssertEqual(point + 3, Point2D(4.0, 5.0))
   }
 
   func testScalarSubtraction() {
-    let vector = Point2D(1.0, 2.0)
+    let point = Point2D(1.0, 2.0)
 
-    XCTAssertEqual(vector - 1, Point2D(0, 1.0))
+    XCTAssertEqual(point - 1, Point2D(0, 1.0))
   }
 
   func testScalarMultiplication() {
-    let vector = Point2D(1.0, 2.0)
+    let point = Point2D(1.0, 2.0)
 
-    XCTAssertEqual(vector * 3, Point2D(3.0, 6.0))
+    XCTAssertEqual(point * 3, Point2D(3.0, 6.0))
   }
 
   func testScalarDivision() {
-    let vector = Point2D(1.0, 2.0)
+    let point = Point2D(1.0, 2.0)
 
-    XCTAssertEqual(vector / 2, Point2D(0.5, 1.0))
+    XCTAssertEqual(point / 2, Point2D(0.5, 1.0))
   }
 
 }
@@ -98,11 +98,11 @@ final class Point2DTests: XCTestCase {
 final class Point3DTests: XCTestCase {
 
   func testInitialization() {
-    let vector = Point3D(1.0, 2.0, 3.0)
+    let point = Point3D(1.0, 2.0, 3.0)
 
-    XCTAssertEqual(vector.x, 1.0)
-    XCTAssertEqual(vector.y, 2.0)
-    XCTAssertEqual(vector.z, 3.0)
+    XCTAssertEqual(point.x, 1.0)
+    XCTAssertEqual(point.y, 2.0)
+    XCTAssertEqual(point.z, 3.0)
   }
 
   func testStaticHelperFunctions() {
@@ -138,27 +138,27 @@ final class Point3DTests: XCTestCase {
   }
 
   func testScalarAddition() {
-    let vector = Point3D(1.0, 2.0, 3.0)
+    let point = Point3D(1.0, 2.0, 3.0)
 
-    XCTAssertEqual(vector + 3, Point3D(4.0, 5.0, 6.0))
+    XCTAssertEqual(point + 3, Point3D(4.0, 5.0, 6.0))
   }
 
   func testScalarSubtraction() {
-    let vector = Point3D(1.0, 2.0, 3.0)
+    let point = Point3D(1.0, 2.0, 3.0)
 
-    XCTAssertEqual(vector - 1, Point3D(0, 1.0, 2.0))
+    XCTAssertEqual(point - 1, Point3D(0, 1.0, 2.0))
   }
 
   func testScalarMultiplication() {
-    let vector = Point3D(1.0, 2.0, 3.0)
+    let point = Point3D(1.0, 2.0, 3.0)
 
-    XCTAssertEqual(vector * 3, Point3D(3.0, 6.0, 9.0))
+    XCTAssertEqual(point * 3, Point3D(3.0, 6.0, 9.0))
   }
   
   func testScalarDivision() {
-    let vector = Point3D(1.0, 2.0, 3.0)
+    let point = Point3D(1.0, 2.0, 3.0)
     
-    XCTAssertEqual(vector / 2, Point3D(0.5, 1.0, 1.5))
+    XCTAssertEqual(point / 2, Point3D(0.5, 1.0, 1.5))
   }
   
 }
