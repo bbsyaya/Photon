@@ -121,12 +121,6 @@ public struct Vector3D {
   var y: Float
   var z: Float
 
-  public init(_ x: Float, _ y: Float, _ z: Float) {
-    self.x = x
-    self.y = y
-    self.z = z
-  }
-
   public var lengthSquared: Float {
     return x * x + y * y + z * z
   }
@@ -135,11 +129,36 @@ public struct Vector3D {
     return sqrt(lengthSquared)
   }
 
+
+  // MARK: - Initialization
+
+  public init(_ x: Float, _ y: Float, _ z: Float) {
+    self.x = x
+    self.y = y
+    self.z = z
+  }
+
+  public init(normal: Normal) {
+    self.init(normal.x, normal.y, normal.z)
+  }
+
+  public init(point: Point3D) {
+    self.init(point.x, point.y, point.z)
+  }
+
+
+  // MARK: - Public Functions
+
   public func normalized() -> Vector3D {
     return self / sqrt(lengthSquared)
   }
 
   public func dot(_ vector: Vector3D) -> Float {
+    return x * vector.x + y * vector.y + z * vector.z
+  }
+
+  public func dot(_ normal: Normal) -> Float {
+    let vector = Vector3D(normal: normal)
     return x * vector.x + y * vector.y + z * vector.z
   }
 }
@@ -182,12 +201,6 @@ extension Vector3D: Equatable {
 
   public static func /(lhs: Vector3D, rhs: Float) -> Vector3D {
     return Vector3D(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
-  }
-
-  // MARK: Dot Product
-
-  public static func ·(lhs: Vector3D, rhs: Vector3D) -> Float {
-    return lhs.dot(rhs)
   }
 }
 

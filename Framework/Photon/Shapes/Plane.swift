@@ -1,4 +1,4 @@
-// Scene.swift
+// Plane.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,9 +21,50 @@
 
 import Foundation
 
-public struct Ray {
-  var origin: Point3D
-  var direction: Vector3D
+public final class Plane: GeometricObject {
+  let point: Point3D
+  let normal: Normal
 
-  var t: Float = 0.0
+  init(point: Point3D, normal: Normal) {
+    self.point = point
+    self.normal = normal.normalized()
+  }
+
+
+  // MARK: - Public Functions
+
+  @inline(__always) public func contains(point foreignPoint: Point3D) -> Bool {
+    return Vector3D(point: foreignPoint - point).dot(normal) == 0
+  }
+
+  // MARK: - Geometric Object
+
+  public func intersected(by ray: Ray) -> Bool {
+    let denominator = ray.direction.dot(Vector3D(normal: normal))
+
+    if denominator > 1e-6 {
+      let vectorInsidePlane = Vector3D(point: point - ray.origin)
+      let t = vectorInsidePlane.dot(normal) / denominator
+
+      return (t >= 0)
+    }
+
+    return false
+  }
 }
+
+/*
+ Vector3f newPoint = point - ray.origin;
+ Vector3f direction = normal / Dot(ray.direction, Vector3f(normal));
+ float t = Dot(newPoint, direction);
+
+ if (t > kEpsilon) {
+ time = t;
+ record.normal = normal;
+ record.intersectionPoint = ray.origin + (ray.direction * t);
+
+ return true;
+ }
+
+ return false;
+ */

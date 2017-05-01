@@ -26,6 +26,9 @@
 		593D4E021EB6907D00BC0591 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E001EB6907D00BC0591 /* Normal.swift */; };
 		593D4E0A1EB6A53000BC0591 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E091EB6A53000BC0591 /* main.swift */; };
 		593D4E101EB6A65800BC0591 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
+		593D4E121EB6C12600BC0591 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E111EB6C12600BC0591 /* Plane.swift */; };
+		593D4E131EB6C12600BC0591 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E111EB6C12600BC0591 /* Plane.swift */; };
+		593D4E151EB6C1BB00BC0591 /* PlaneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -73,6 +76,8 @@
 		593D4E001EB6907D00BC0591 /* Normal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Normal.swift; path = Math/Normal.swift; sourceTree = "<group>"; };
 		593D4E071EB6A53000BC0591 /* photon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = photon; sourceTree = BUILT_PRODUCTS_DIR; };
 		593D4E091EB6A53000BC0591 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../Photon/CLI/main.swift; sourceTree = "<group>"; };
+		593D4E111EB6C12600BC0591 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = Shapes/Plane.swift; sourceTree = "<group>"; };
+		593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -113,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				593D4DE71EB56BE500BC0591 /* GeometricObject.swift */,
+				593D4E111EB6C12600BC0591 /* Plane.swift */,
 			);
 			name = Shapes;
 			sourceTree = "<group>";
@@ -189,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				593D4DFE1EB656AB00BC0591 /* ImageTests.swift */,
+				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
 				597773BF1EAFB47F0051EF1D /* VectorTests.swift */,
 				597773B41EAFA0BB0051EF1D /* Info.plist */,
@@ -349,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593D4E011EB6907D00BC0591 /* Normal.swift in Sources */,
+				593D4E121EB6C12600BC0591 /* Plane.swift in Sources */,
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DE81EB56BE500BC0591 /* GeometricObject.swift in Sources */,
@@ -372,7 +380,9 @@
 				597773BE1EAFB1750051EF1D /* Vector.swift in Sources */,
 				593D4DF71EB6471700BC0591 /* Scene.swift in Sources */,
 				597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */,
+				593D4E151EB6C1BB00BC0591 /* PlaneTests.swift in Sources */,
 				593D4DE91EB56BE500BC0591 /* GeometricObject.swift in Sources */,
+				593D4E131EB6C12600BC0591 /* Plane.swift in Sources */,
 				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

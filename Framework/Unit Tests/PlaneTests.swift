@@ -1,4 +1,4 @@
-// Scene.swift
+// PlaneTests.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,10 +20,29 @@
 // THE SOFTWARE.
 
 import Foundation
+import XCTest
 
-public struct Ray {
-  var origin: Point3D
-  var direction: Vector3D
+final class PlaneTests: XCTestCase {
 
-  var t: Float = 0.0
+  func testInitialization() {
+    let plane = Plane(point: Point3D(1, 2, 3), normal: Normal(0, 1, 0))
+    XCTAssertEqual(plane.point, Point3D(1, 2, 3))
+    XCTAssertEqual(plane.normal, Normal(0, 1, 0))
+  }
+
+  func testPointTesting() {
+    let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+
+    XCTAssertTrue(plane.contains(point: Point3D(30, 0, 20)))
+    XCTAssertFalse(plane.contains(point: Point3D(30, 1, 20)))
+  }
+
+  func testMissedIntersections() {
+    let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+    let ray = Ray(origin: Point3D(0, 1, 0), direction: Vector3D(0, 1, 0), time: 100)
+    let hit = plane.intersected(by: ray)
+
+    XCTAssertFalse(hit)
+  }
+
 }
