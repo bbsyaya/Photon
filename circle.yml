@@ -10,3 +10,9 @@ test:
       -scheme "Photon"
       clean build test |
       xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+    - set -o pipefail &&
+      xcodebuild
+      -workspace Photon.xcworkspace
+      -scheme "CLI"
+      clean build |
+      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml

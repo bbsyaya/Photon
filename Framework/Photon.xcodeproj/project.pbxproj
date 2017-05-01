@@ -22,6 +22,10 @@
 		593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */; };
 		593D4DFD1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */; };
 		593D4DFF1EB656AB00BC0591 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DFE1EB656AB00BC0591 /* ImageTests.swift */; };
+		593D4E011EB6907D00BC0591 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E001EB6907D00BC0591 /* Normal.swift */; };
+		593D4E021EB6907D00BC0591 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E001EB6907D00BC0591 /* Normal.swift */; };
+		593D4E0A1EB6A53000BC0591 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E091EB6A53000BC0591 /* main.swift */; };
+		593D4E101EB6A65800BC0591 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -29,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		593D4E0E1EB6A65200BC0591 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 597773981EAF9AB10051EF1D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 597773A01EAF9AB10051EF1D;
+			remoteInfo = Photon;
+		};
 		597773B61EAFA0BB0051EF1D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 597773981EAF9AB10051EF1D /* Project object */;
@@ -37,6 +48,18 @@
 			remoteInfo = Photon;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		593D4E051EB6A53000BC0591 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		593D4DE71EB56BE500BC0591 /* GeometricObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeometricObject.swift; path = Shapes/GeometricObject.swift; sourceTree = "<group>"; };
@@ -47,6 +70,9 @@
 		593D4DF81EB64B2A00BC0591 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Image.swift; path = Images/Image.swift; sourceTree = "<group>"; };
 		593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageSerializable.swift; path = Images/ImageSerializable.swift; sourceTree = "<group>"; };
 		593D4DFE1EB656AB00BC0591 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
+		593D4E001EB6907D00BC0591 /* Normal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Normal.swift; path = Math/Normal.swift; sourceTree = "<group>"; };
+		593D4E071EB6A53000BC0591 /* photon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = photon; sourceTree = BUILT_PRODUCTS_DIR; };
+		593D4E091EB6A53000BC0591 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../Photon/CLI/main.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +83,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		593D4E041EB6A53000BC0591 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593D4E101EB6A65800BC0591 /* Photon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5977739D1EAF9AB10051EF1D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -108,11 +142,21 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		593D4E081EB6A53000BC0591 /* CLI */ = {
+			isa = PBXGroup;
+			children = (
+				593D4E091EB6A53000BC0591 /* main.swift */,
+			);
+			name = CLI;
+			path = photon;
+			sourceTree = "<group>";
+		};
 		597773971EAF9AB10051EF1D = {
 			isa = PBXGroup;
 			children = (
 				597773A31EAF9AB10051EF1D /* Photon */,
 				597773B11EAFA0BB0051EF1D /* Unit Tests */,
+				593D4E081EB6A53000BC0591 /* CLI */,
 				597773A21EAF9AB10051EF1D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -122,6 +166,7 @@
 			children = (
 				597773A11EAF9AB10051EF1D /* Photon.framework */,
 				597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */,
+				593D4E071EB6A53000BC0591 /* photon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +201,7 @@
 			children = (
 				593D4DEF1EB56E6F00BC0591 /* Point.swift */,
 				597773BC1EAFB1750051EF1D /* Vector.swift */,
+				593D4E001EB6907D00BC0591 /* Normal.swift */,
 			);
 			name = Math;
 			sourceTree = "<group>";
@@ -174,6 +220,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		593D4E061EB6A53000BC0591 /* CLI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 593D4E0B1EB6A53000BC0591 /* Build configuration list for PBXNativeTarget "CLI" */;
+			buildPhases = (
+				593D4E031EB6A53000BC0591 /* Sources */,
+				593D4E041EB6A53000BC0591 /* Frameworks */,
+				593D4E051EB6A53000BC0591 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				593D4E0F1EB6A65200BC0591 /* PBXTargetDependency */,
+			);
+			name = CLI;
+			productName = photon;
+			productReference = 593D4E071EB6A53000BC0591 /* photon */;
+			productType = "com.apple.product-type.tool";
+		};
 		597773A01EAF9AB10051EF1D /* Photon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 597773A91EAF9AB10051EF1D /* Build configuration list for PBXNativeTarget "Photon" */;
@@ -220,6 +284,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Sam Symons";
 				TargetAttributes = {
+					593D4E061EB6A53000BC0591 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					597773A01EAF9AB10051EF1D = {
 						CreatedOnToolsVersion = 8.3.2;
 						LastSwiftMigration = 0830;
@@ -244,6 +312,7 @@
 			projectRoot = "";
 			targets = (
 				597773A01EAF9AB10051EF1D /* Photon */,
+				593D4E061EB6A53000BC0591 /* CLI */,
 				597773AF1EAFA0BB0051EF1D /* Unit Tests */,
 			);
 		};
@@ -267,10 +336,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		593D4E031EB6A53000BC0591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				593D4E0A1EB6A53000BC0591 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5977739C1EAF9AB10051EF1D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				593D4E011EB6907D00BC0591 /* Normal.swift in Sources */,
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DE81EB56BE500BC0591 /* GeometricObject.swift in Sources */,
@@ -295,12 +373,18 @@
 				593D4DF71EB6471700BC0591 /* Scene.swift in Sources */,
 				597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */,
 				593D4DE91EB56BE500BC0591 /* GeometricObject.swift in Sources */,
+				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		593D4E0F1EB6A65200BC0591 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 597773A01EAF9AB10051EF1D /* Photon */;
+			targetProxy = 593D4E0E1EB6A65200BC0591 /* PBXContainerItemProxy */;
+		};
 		597773B71EAFA0BB0051EF1D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 597773A01EAF9AB10051EF1D /* Photon */;
@@ -309,6 +393,24 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		593D4E0C1EB6A53000BC0591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				PRODUCT_NAME = photon;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		593D4E0D1EB6A53000BC0591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				PRODUCT_NAME = photon;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		597773A71EAF9AB10051EF1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -410,6 +512,7 @@
 		597773AA1EAF9AB10051EF1D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -432,6 +535,7 @@
 		597773AB1EAF9AB10051EF1D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
@@ -479,6 +583,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		593D4E0B1EB6A53000BC0591 /* Build configuration list for PBXNativeTarget "CLI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				593D4E0C1EB6A53000BC0591 /* Debug */,
+				593D4E0D1EB6A53000BC0591 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5977739B1EAF9AB10051EF1D /* Build configuration list for PBXProject "Photon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

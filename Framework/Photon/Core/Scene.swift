@@ -21,6 +21,8 @@
 
 import Foundation
 
+public typealias SceneRenderingCompletion = ((_ image: Image?) -> Void)
+
 public final class Scene {
   private var objects: [GeometricObject] = []
 
@@ -30,5 +32,13 @@ public final class Scene {
 
   public func add(objects objectArray: [GeometricObject]) {
     objects.append(contentsOf: objectArray)
+  }
+
+  public func renderScene(completion: SceneRenderingCompletion) {
+    guard objects.count > 0 else { completion(nil); return }
+
+    let image = Image() // TODO: Render an actual image.
+
+    completion(image)
   }
 }

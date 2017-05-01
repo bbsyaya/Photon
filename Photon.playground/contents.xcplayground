@@ -3,6 +3,7 @@
     <pages>
         <page name='Table of Contents'/>
         <page name='Linear Algebra'/>
+        <page name='Generating Custom Images'/>
         <page name='Calculating Object Intersections'/>
         <page name='Basic Ray Tracing'/>
     </pages>

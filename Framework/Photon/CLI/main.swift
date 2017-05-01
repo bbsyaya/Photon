@@ -1,4 +1,4 @@
-// ImageTests.swift
+// main.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,32 +20,5 @@
 // THE SOFTWARE.
 
 import Foundation
-import XCTest
 
-final class ImageTests: XCTestCase {
-
-  func testEmptyImageGeneration() {
-    let emptyImageData: [PixelData] = []
-    let image = Image.image(from: emptyImageData, width: 0, height: 0)
-
-    XCTAssertNil(image)
-  }
-
-  func testBasicImageGeneration() {
-    let imageData: [PixelData] = [PixelData(r: 0, g: 0, b: 0)]
-    let image = Image.image(from: imageData, width: 1, height: 1)
-
-    XCTAssertNotNil(image)
-  }
-
-  func testImageSizing() {
-    let pixel = PixelData(r: 0, g: 255, b: 0)
-    let imageData = [PixelData](repeating: pixel, count: 100)
-    let image = Image.image(from: imageData, width: 20, height: 5)
-
-    XCTAssertNotNil(image)
-    XCTAssertEqual(image?.size.width, 20)
-    XCTAssertEqual(image?.size.height, 5)
-  }
-
-}
+print("Photon 1.0")
