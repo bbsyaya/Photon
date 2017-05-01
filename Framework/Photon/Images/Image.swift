@@ -30,6 +30,11 @@ import CoreGraphics
   public typealias ImageType = NSImage
 #endif
 
+/// Represents a single pixel color.
+///
+/// - Note: The alpha channel is largely ignored throughout the framework, and
+///         is only included to satisfy CGImage. There should always be maximum
+///         alpha; no pixels are transparent.
 public struct PixelData {
   let r: UInt8
   let g: UInt8
@@ -43,10 +48,20 @@ public struct PixelData {
   }
 }
 
+/// `Image` provides helpers functions for generating a platform-friendly image
+/// from an array of `PixelData` structs.
 public struct Image {
   private static let colorSpace = CGColorSpaceCreateDeviceRGB()
   private static let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
 
+  /// Returns an image from a given array of `PixelData`.
+  ///
+  /// - Parameter pixels: An array of `PixelData` to be used in the image.
+  /// - Parameter width: The width of the image.
+  /// - Parameter height: The height of the image.
+  ///
+  /// - Note: The value of `width` * `height` must equal the size of the pixels array.
+  ///         This condition is tested with an assert.
   public static func image(from pixels: [PixelData], width: Int, height: Int) -> ImageType? {
     let bitsPerComponent: Int = 8
     let bitsPerPixel: Int = 32
