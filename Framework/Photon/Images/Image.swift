@@ -24,17 +24,17 @@ import CoreGraphics
 
 #if os(iOS) || os(tvOS) || os(watchOS)
   import UIKit
-  public typealias PlatformImage = UIImage
+  public typealias ImageType = UIImage
 #elseif os(OSX)
   import Cocoa
-  public typealias PlatformImage = NSImage
+  public typealias ImageType = NSImage
 #endif
 
 public struct PixelData {
-  var r: UInt8
-  var g: UInt8
-  var b: UInt8
-  var a: UInt8 = 255
+  let r: UInt8
+  let g: UInt8
+  let b: UInt8
+  let a: UInt8 = 255
 
   public init(r: UInt8, g: UInt8, b: UInt8) {
     self.r = r
@@ -47,7 +47,7 @@ public struct Image {
   private static let colorSpace = CGColorSpaceCreateDeviceRGB()
   private static let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
 
-  public static func image(from pixels: [PixelData], width: Int, height: Int) -> PlatformImage? {
+  public static func image(from pixels: [PixelData], width: Int, height: Int) -> ImageType? {
     let bitsPerComponent: Int = 8
     let bitsPerPixel: Int = 32
 
