@@ -37,12 +37,54 @@ final class PlaneTests: XCTestCase {
     XCTAssertFalse(plane.contains(point: Point3D(30, 1, 20)))
   }
 
-  func testMissedIntersections() {
+  func testNoIntersection() {
     let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
-    let ray = Ray(origin: Point3D(0, 1, 0), direction: Vector3D(0, 1, 0), time: 100)
-    let hit = plane.intersected(by: ray)
+    let ray = Ray(origin: Point3D(0, 1, 0), direction: Vector3D(0, 1, 0))
+    let intersection = plane.intersection(with: ray)
 
-    XCTAssertFalse(hit)
+    XCTAssertFalse(intersection.isHit)
+  }
+
+  func testValidIntersections() {
+    do {
+      let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+      let ray = Ray(origin: Point3D(0, 5, 0), direction: Vector3D(0, -1, 0))
+      let intersection = plane.intersection(with: ray)
+
+      XCTAssertTrue(intersection.isHit)
+      XCTAssertEqual(intersection.intersectionPoint, Point3D.zero)
+      XCTAssertEqual(intersection.t, 5)
+    }
+
+    do {
+      let plane = Plane(point: Point3D(0, 2, 0), normal: Normal(0, 1, 0))
+      let ray = Ray(origin: Point3D(0, 5, 0), direction: Vector3D(0, -1, 0))
+      let intersection = plane.intersection(with: ray)
+
+      XCTAssertTrue(intersection.isHit)
+      XCTAssertEqual(intersection.intersectionPoint, Point3D(0, 2, 0))
+      XCTAssertEqual(intersection.t, 3)
+    }
+
+    do {
+      let plane = Plane(point: Point3D(0, 10, 0), normal: Normal(0, -1, 0))
+      let ray = Ray(origin: Point3D(0, -2, 0), direction: Vector3D(0, 1, 0))
+      let intersection = plane.intersection(with: ray)
+
+      XCTAssertTrue(intersection.isHit)
+      XCTAssertEqual(intersection.intersectionPoint, Point3D(0, 10, 0))
+      XCTAssertEqual(intersection.t, 12)
+    }
+
+    do {
+      let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+      let ray = Ray(origin: Point3D(0, 10, 0), direction: Vector3D(1.5, -1, -1))
+      let intersection = plane.intersection(with: ray)
+
+      XCTAssertTrue(intersection.isHit)
+      XCTAssertEqual(intersection.intersectionPoint, Point3D(15, 0, -10))
+      XCTAssertEqual(intersection.t, 10)
+    }
   }
 
 }

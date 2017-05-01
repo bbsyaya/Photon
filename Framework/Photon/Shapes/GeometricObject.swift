@@ -22,5 +22,5 @@
 import Foundation
 
 public protocol GeometricObject {
-  func intersected(by ray: Ray) -> Bool
+  func intersection(with ray: Ray) -> Intersection
 }

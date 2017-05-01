@@ -39,17 +39,18 @@ public final class Plane: GeometricObject {
 
   // MARK: - Geometric Object
 
-  public func intersected(by ray: Ray) -> Bool {
+  public func intersection(with ray: Ray) -> Intersection {
     let denominator = ray.direction.dot(Vector3D(normal: normal))
 
-    if denominator > 1e-6 {
+    if abs(denominator) > 1e-6 {
       let vectorInsidePlane = Vector3D(point: point - ray.origin)
       let t = vectorInsidePlane.dot(normal) / denominator
+      let hit = (t >= 0)
 
-      return (t >= 0)
+      return Intersection(t: t, isHit: hit, normal: normal, intersectionPoint: ray.origin + (ray.direction * t))
     }
 
-    return false
+    return Intersection.none
   }
 }
 

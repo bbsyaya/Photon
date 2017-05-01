@@ -1,4 +1,4 @@
-// Scene.swift
+// Intersection.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,15 +21,11 @@
 
 import Foundation
 
-public struct Ray {
-  var origin: Point3D
-  var direction: Vector3D
+public struct Intersection {
+  let t: Float
+  let isHit: Bool
+  let normal: Normal
+  let intersectionPoint: Point3D
 
-  var t: Float = 0.0
-
-  init(origin: Point3D, direction: Vector3D, t: Float = 0.0) {
-    self.origin = origin
-    self.direction = direction
-    self.t = t
-  }
+  static let none = Intersection(t: 0, isHit: false, normal: Normal.zero, intersectionPoint: Point3D.zero)
 }
