@@ -1,0 +1,12 @@
+language: objective-c
+
+branches:
+  only:
+    - master
+
+xcode_workspace: Photon.xcworkspace
+xcode_scheme: Photon
+osx_image: xcode8.3
+
+script:
+  - xcodebuild clean build test -workspace Photon.xcworkspace -scheme Photon
