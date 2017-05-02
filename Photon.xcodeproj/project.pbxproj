@@ -32,6 +32,9 @@
 		593D4FE41EB8DEEF00BC0591 /* GeometricObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE31EB8DEEF00BC0591 /* GeometricObject.swift */; };
 		593D4FE51EB8DEEF00BC0591 /* GeometricObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE31EB8DEEF00BC0591 /* GeometricObject.swift */; };
 		593D4FE71EB8E2A300BC0591 /* SceneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE61EB8E2A300BC0591 /* SceneTests.swift */; };
+		593D4FE91EB8F1E000BC0591 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE81EB8F1E000BC0591 /* Buffer.swift */; };
+		593D4FEA1EB8F1E000BC0591 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE81EB8F1E000BC0591 /* Buffer.swift */; };
+		593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FEB1EB8F30700BC0591 /* BufferTests.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -83,6 +86,8 @@
 		593D4E161EB6DA9B00BC0591 /* Intersection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Intersection.swift; path = Core/Intersection.swift; sourceTree = "<group>"; };
 		593D4FE31EB8DEEF00BC0591 /* GeometricObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeometricObject.swift; path = Shapes/GeometricObject.swift; sourceTree = "<group>"; };
 		593D4FE61EB8E2A300BC0591 /* SceneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTests.swift; sourceTree = "<group>"; };
+		593D4FE81EB8F1E000BC0591 /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Buffer.swift; path = Core/Buffer.swift; sourceTree = "<group>"; };
+		593D4FEB1EB8F30700BC0591 /* BufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -138,9 +143,10 @@
 		593D4DEB1EB56CDC00BC0591 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				593D4FE81EB8F1E000BC0591 /* Buffer.swift */,
+				593D4E161EB6DA9B00BC0591 /* Intersection.swift */,
 				593D4DEC1EB56CFE00BC0591 /* Ray.swift */,
 				593D4DF51EB6471700BC0591 /* Scene.swift */,
-				593D4E161EB6DA9B00BC0591 /* Intersection.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 		597773B11EAFA0BB0051EF1D /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				593D4FEB1EB8F30700BC0591 /* BufferTests.swift */,
 				593D4DFE1EB656AB00BC0591 /* ImageTests.swift */,
 				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
@@ -368,6 +375,7 @@
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DF61EB6471700BC0591 /* Scene.swift in Sources */,
 				597773BD1EAFB1750051EF1D /* Vector.swift in Sources */,
+				593D4FE91EB8F1E000BC0591 /* Buffer.swift in Sources */,
 				593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
 				593D4E171EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */,
@@ -379,6 +387,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593D4DFD1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
+				593D4FEA1EB8F1E000BC0591 /* Buffer.swift in Sources */,
 				593D4DF31EB56F9D00BC0591 /* PointTests.swift in Sources */,
 				593D4FE51EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DFA1EB64B2A00BC0591 /* Image.swift in Sources */,
@@ -391,6 +400,7 @@
 				593D4E151EB6C1BB00BC0591 /* PlaneTests.swift in Sources */,
 				593D4E131EB6C12600BC0591 /* Plane.swift in Sources */,
 				593D4E181EB6DA9B00BC0591 /* Intersection.swift in Sources */,
+				593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */,
 				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
 				593D4FE71EB8E2A300BC0591 /* SceneTests.swift in Sources */,
 			);

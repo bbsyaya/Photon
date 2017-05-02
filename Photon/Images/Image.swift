@@ -48,6 +48,12 @@ public struct PixelData {
   }
 }
 
+extension PixelData: Equatable {
+  public static func ==(lhs: PixelData, rhs: PixelData) -> Bool {
+    return lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b && lhs.a == rhs.a
+  }
+}
+
 /// `Image` provides helpers functions for generating a platform-friendly image
 /// from an array of `PixelData` structs.
 public struct Image {
