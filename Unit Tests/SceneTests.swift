@@ -1,4 +1,4 @@
-// Scene.swift
+// ImageTests.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -20,34 +20,27 @@
 // THE SOFTWARE.
 
 import Foundation
+import XCTest
 
-public typealias SceneRenderingCompletion = ((_ image: ImageType?) -> Void)
+final class SceneTests: XCTestCase {
 
-public final class Scene {
-  private var geometricObjects: [GeometricObject] = []
-
-  public var objects: [GeometricObject] {
-    return geometricObjects
+  func testInitialization() {
+    let scene = Scene()
+    XCTAssertEqual(scene.objects.count, 0)
   }
 
+  func testRenderingWithoutObjects() {
+    let scene = Scene()
+    let expectation = XCTestExpectation(description: "A scene with no objects should not render an image")
+    var image: NSImage? = nil
 
-  // MARK: - Public Functions
+    scene.renderScene { returnedImage in
+      image = returnedImage
+      expectation.fulfill()
+    }
 
-  public func add(object: GeometricObject) {
-    geometricObjects.append(object)
+    XCTWaiter.wait(for: [expectation], timeout: 1.0)
+    XCTAssertNil(image)
   }
 
-  public func add(objects objectArray: [GeometricObject]) {
-    geometricObjects.append(contentsOf: objectArray)
-  }
-
-  public func renderScene(completion: SceneRenderingCompletion) {
-    guard objects.count > 0 else { completion(nil); return }
-
-    let pixel = PixelData(r: 255, g: 0, b: 0)
-    let imageData = [PixelData](repeating: pixel, count: 200 * 200)
-    let image = Image.image(from: imageData, width: 200, height: 200)
-
-    completion(image)
-  }
 }
