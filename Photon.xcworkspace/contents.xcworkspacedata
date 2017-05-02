@@ -5,6 +5,6 @@
       location = "group:Photon.playground">
    </FileRef>
    <FileRef
-      location = "group:Framework/Photon.xcodeproj">
+      location = "group:Photon.xcodeproj">
    </FileRef>
 </Workspace>
