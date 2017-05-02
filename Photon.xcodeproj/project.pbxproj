@@ -76,7 +76,7 @@
 		593D4DFE1EB656AB00BC0591 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 		593D4E001EB6907D00BC0591 /* Normal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Normal.swift; path = Math/Normal.swift; sourceTree = "<group>"; };
 		593D4E071EB6A53000BC0591 /* photon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = photon; sourceTree = BUILT_PRODUCTS_DIR; };
-		593D4E091EB6A53000BC0591 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = main.swift; path = ../Photon/CLI/main.swift; sourceTree = "<group>"; };
+		593D4E091EB6A53000BC0591 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		593D4E111EB6C12600BC0591 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Plane.swift; path = Shapes/Plane.swift; sourceTree = "<group>"; };
 		593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
 		593D4E161EB6DA9B00BC0591 /* Intersection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Intersection.swift; path = Core/Intersection.swift; sourceTree = "<group>"; };
@@ -157,8 +157,7 @@
 			children = (
 				593D4E091EB6A53000BC0591 /* main.swift */,
 			);
-			name = CLI;
-			path = photon;
+			path = CLI;
 			sourceTree = "<group>";
 		};
 		597773971EAF9AB10051EF1D = {
