@@ -16,12 +16,8 @@ import PlaygroundSupport
 import Photon
 
 let pixel = PixelData(r: 255, g: 0, b: 0)
-let imageData = [PixelData](repeating: pixel, count: 100 * 100)
-let image = Image.image(from: imageData, width: 100, height: 100)
+let imageData = [PixelData](repeating: pixel, count: 200 * 200)
+let image = Image.image(from: imageData, width: 200, height: 200)
 
-let imageView = NSImageView(frame: NSRect(x: 0, y: 0, width: 100, height: 100))
-imageView.image = image
-
-PlaygroundPage.current.liveView = imageView
 //:  ****
 //:  [Next](@next)
