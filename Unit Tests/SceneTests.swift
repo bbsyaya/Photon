@@ -31,7 +31,7 @@ final class SceneTests: XCTestCase {
 
   func testRenderingWithoutObjects() {
     let scene = Scene()
-    let expectation = XCTestExpectation(description: "A scene with no objects should not render an image")
+    let expectation = self.expectation(description: "A scene with no objects should not render an image")
     var image: NSImage? = nil
 
     scene.renderScene { returnedImage in
@@ -39,8 +39,9 @@ final class SceneTests: XCTestCase {
       expectation.fulfill()
     }
 
-    XCTWaiter.wait(for: [expectation], timeout: 1.0)
-    XCTAssertNil(image)
+    waitForExpectations(timeout: 1.0) { error in
+      XCTAssertNil(image)
+    }
   }
 
 }
