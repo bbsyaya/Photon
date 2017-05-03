@@ -37,6 +37,10 @@ public struct Normal {
     self.z = z
   }
 
+  public init(point: Point3D) {
+    self.init(point.x, point.y, point.z)
+  }
+
   public var lengthSquared: Float {
     return x * x + y * y + z * z
   }

@@ -1,4 +1,4 @@
-// Plane.swift
+// Sphere.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,35 +21,49 @@
 
 import Foundation
 
-public final class Plane: GeometricObject {
-  let point: Point3D
-  let normal: Normal
+public final class Sphere: GeometricObject {
+  let center: Point3D
+  let radius: Float
 
-  init(point: Point3D, normal: Normal) {
-    self.point = point
-    self.normal = normal.normalized()
+  private var radiusSquared: Float {
+    return radius * radius
   }
 
-
-  // MARK: - Public Functions
-
-  @inline(__always) public func contains(point foreignPoint: Point3D) -> Bool {
-    return Vector3D(point: foreignPoint - point).dot(normal) == 0
+  init(center: Point3D, radius: Float) {
+    self.center = center
+    self.radius = radius
   }
+
 
   // MARK: - Geometric Object
 
   public func intersection(with ray: Ray) -> Intersection {
-    let denominator = ray.direction.dot(Vector3D(normal: normal))
+    let vector = Vector3D(point: center - ray.origin)
+    let tca = vector.dot(ray.direction)
+    let d2 = vector.dot(vector) - tca * tca
 
-    if abs(denominator) > 1e-6 {
-      let vectorInsidePlane = Vector3D(point: point - ray.origin)
-      let t = vectorInsidePlane.dot(normal) / denominator
-      let hit = (t >= 0)
-
-      return Intersection(t: t, isHit: hit, normal: normal, intersectionPoint: ray.origin + (ray.direction * t))
+    if d2 > radiusSquared {
+      return Intersection.none
     }
 
-    return Intersection.none
+    let thc = sqrt(radiusSquared - d2)
+    var t0 = tca - thc
+    var t1 = tca + thc
+
+    if t0 > t1 {
+      swap(&t0, &t1)
+    }
+
+    if t0 < 0 {
+      t0 = t1
+      if t0 < 0 {
+        return Intersection.none
+      }
+    }
+
+    let t = t0
+    let hitPoint = ray.origin + (ray.direction * t)
+
+    return Intersection(t: t1, isHit: true, normal: Normal(point: hitPoint - center), intersectionPoint: hitPoint)
   }
 }
