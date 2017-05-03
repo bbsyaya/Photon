@@ -154,10 +154,10 @@ final class Point3DTests: XCTestCase {
 
     XCTAssertEqual(point * 3, Point3D(3.0, 6.0, 9.0))
   }
-  
+
   func testScalarDivision() {
     let point = Point3D(1.0, 2.0, 3.0)
-    
+
     XCTAssertEqual(point / 2, Point3D(0.5, 1.0, 1.5))
   }
   

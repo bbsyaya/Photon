@@ -39,41 +39,41 @@ extension Point2D: Equatable {
 
   // MARK: 2D Vector Arithmetic
 
-  public static func ==(lhs: Point2D, rhs: Point2D) -> Bool {
+  public static func == (lhs: Point2D, rhs: Point2D) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y
   }
 
-  public static func +(lhs: Point2D, rhs: Point2D) -> Point2D {
+  public static func + (lhs: Point2D, rhs: Point2D) -> Point2D {
     return Point2D(lhs.x + rhs.x, lhs.y + rhs.y)
   }
 
-  public static func -(lhs: Point2D, rhs: Point2D) -> Point2D {
+  public static func - (lhs: Point2D, rhs: Point2D) -> Point2D {
     return Point2D(lhs.x - rhs.x, lhs.y - rhs.y)
   }
 
-  public static func *(lhs: Point2D, rhs: Point2D) -> Point2D {
+  public static func * (lhs: Point2D, rhs: Point2D) -> Point2D {
     return Point2D(lhs.x * rhs.x, lhs.y * rhs.y)
   }
 
-  public static func /(lhs: Point2D, rhs: Point2D) -> Point2D {
+  public static func / (lhs: Point2D, rhs: Point2D) -> Point2D {
     return Point2D(lhs.x / rhs.x, lhs.y / rhs.y)
   }
 
   // MARK: Float Arithmetic
 
-  public static func +(lhs: Point2D, rhs: Float) -> Point2D {
+  public static func + (lhs: Point2D, rhs: Float) -> Point2D {
     return Point2D(lhs.x + rhs, lhs.y + rhs)
   }
 
-  public static func -(lhs: Point2D, rhs: Float) -> Point2D {
+  public static func - (lhs: Point2D, rhs: Float) -> Point2D {
     return Point2D(lhs.x - rhs, lhs.y - rhs)
   }
 
-  public static func *(lhs: Point2D, rhs: Float) -> Point2D {
+  public static func * (lhs: Point2D, rhs: Float) -> Point2D {
     return Point2D(lhs.x * rhs, lhs.y * rhs)
   }
 
-  public static func /(lhs: Point2D, rhs: Float) -> Point2D {
+  public static func / (lhs: Point2D, rhs: Float) -> Point2D {
     return Point2D(lhs.x / rhs, lhs.y / rhs)
   }
 }
@@ -103,45 +103,45 @@ public struct Point3D {
 
 extension Point3D: Equatable {
 
-  public static func ==(lhs: Point3D, rhs: Point3D) -> Bool {
+  public static func == (lhs: Point3D, rhs: Point3D) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
   }
 
-  public static func +(lhs: Point3D, rhs: Point3D) -> Point3D {
+  public static func + (lhs: Point3D, rhs: Point3D) -> Point3D {
     return Point3D(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
   }
 
-  public static func +(lhs: Point3D, rhs: Vector3D) -> Point3D {
+  public static func + (lhs: Point3D, rhs: Vector3D) -> Point3D {
     return Point3D(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
   }
 
-  public static func -(lhs: Point3D, rhs: Point3D) -> Point3D {
+  public static func - (lhs: Point3D, rhs: Point3D) -> Point3D {
     return Point3D(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z)
   }
 
-  public static func *(lhs: Point3D, rhs: Point3D) -> Point3D {
+  public static func * (lhs: Point3D, rhs: Point3D) -> Point3D {
     return Point3D(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z)
   }
 
-  public static func /(lhs: Point3D, rhs: Point3D) -> Point3D {
+  public static func / (lhs: Point3D, rhs: Point3D) -> Point3D {
     return Point3D(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z)
   }
 
   // MARK: Float Arithmetic
 
-  public static func +(lhs: Point3D, rhs: Float) -> Point3D {
+  public static func + (lhs: Point3D, rhs: Float) -> Point3D {
     return Point3D(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs)
   }
 
-  public static func -(lhs: Point3D, rhs: Float) -> Point3D {
+  public static func - (lhs: Point3D, rhs: Float) -> Point3D {
     return Point3D(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs)
   }
 
-  public static func *(lhs: Point3D, rhs: Float) -> Point3D {
+  public static func * (lhs: Point3D, rhs: Float) -> Point3D {
     return Point3D(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs)
   }
 
-  public static func /(lhs: Point3D, rhs: Float) -> Point3D {
+  public static func / (lhs: Point3D, rhs: Float) -> Point3D {
     return Point3D(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
   }
 }

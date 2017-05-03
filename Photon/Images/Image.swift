@@ -49,7 +49,7 @@ public struct PixelData {
 }
 
 extension PixelData: Equatable {
-  public static func ==(lhs: PixelData, rhs: PixelData) -> Bool {
+  public static func == (lhs: PixelData, rhs: PixelData) -> Bool {
     return lhs.r == rhs.r && lhs.g == rhs.g && lhs.b == rhs.b && lhs.a == rhs.a
   }
 }

@@ -52,41 +52,41 @@ public struct Normal {
 
 extension Normal: Equatable {
 
-  public static func ==(lhs: Normal, rhs: Normal) -> Bool {
+  public static func == (lhs: Normal, rhs: Normal) -> Bool {
     return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
   }
 
-  public static func +(lhs: Normal, rhs: Normal) -> Normal {
+  public static func + (lhs: Normal, rhs: Normal) -> Normal {
     return Normal(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
   }
 
-  public static func -(lhs: Normal, rhs: Normal) -> Normal {
+  public static func - (lhs: Normal, rhs: Normal) -> Normal {
     return Normal(lhs.x - rhs.x, lhs.y - rhs.y, lhs.z - rhs.z)
   }
 
-  public static func *(lhs: Normal, rhs: Normal) -> Normal {
+  public static func * (lhs: Normal, rhs: Normal) -> Normal {
     return Normal(lhs.x * rhs.x, lhs.y * rhs.y, lhs.z * rhs.z)
   }
 
-  public static func /(lhs: Normal, rhs: Normal) -> Normal {
+  public static func / (lhs: Normal, rhs: Normal) -> Normal {
     return Normal(lhs.x / rhs.x, lhs.y / rhs.y, lhs.z / rhs.z)
   }
 
   // MARK: Float Arithmetic
 
-  public static func +(lhs: Normal, rhs: Float) -> Normal {
+  public static func + (lhs: Normal, rhs: Float) -> Normal {
     return Normal(lhs.x + rhs, lhs.y + rhs, lhs.z + rhs)
   }
 
-  public static func -(lhs: Normal, rhs: Float) -> Normal {
+  public static func - (lhs: Normal, rhs: Float) -> Normal {
     return Normal(lhs.x - rhs, lhs.y - rhs, lhs.z - rhs)
   }
 
-  public static func *(lhs: Normal, rhs: Float) -> Normal {
+  public static func * (lhs: Normal, rhs: Float) -> Normal {
     return Normal(lhs.x * rhs, lhs.y * rhs, lhs.z * rhs)
   }
 
-  public static func /(lhs: Normal, rhs: Float) -> Normal {
+  public static func / (lhs: Normal, rhs: Float) -> Normal {
     return Normal(lhs.x / rhs, lhs.y / rhs, lhs.z / rhs)
   }
 }
