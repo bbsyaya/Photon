@@ -21,15 +21,15 @@
 
 import Foundation
 
-public typealias PixelCoordinate = (x: Int, y: Int)
+public typealias PixelCoordinate = (row: Int, column: Int)
 
 public struct Buffer {
-  let width: UInt
-  let height: UInt
+  let width: Int
+  let height: Int
   var pixelData: [PixelData]
 
   /// Initializes a new Buffer with an array of pixel data containing black pixels.
-  init(width: UInt, height: UInt) {
+  init(width: Int, height: Int) {
     self.width = width
     self.height = height
 
@@ -39,10 +39,22 @@ public struct Buffer {
 
   subscript(coordinate: PixelCoordinate) -> PixelData {
     get {
-      return pixelData[0]
+      return pixelData(at: coordinate)
     }
     set {
-      pixelData[0] = newValue
+      pixelData[index(at: coordinate)] = newValue
     }
+  }
+
+
+  // MARK: - Private Functions
+
+  private func pixelData(at coordinate: PixelCoordinate) -> PixelData {
+    return pixelData[index(at: coordinate)]
+  }
+
+  private func index(at coordinate: PixelCoordinate) -> Int {
+    let row = width * coordinate.row
+    return row + coordinate.column
   }
 }

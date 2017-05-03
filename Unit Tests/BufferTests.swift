@@ -32,9 +32,9 @@ final class BufferTests: XCTestCase {
   func testSubscripts() {
     var buffer = Buffer(width: 100, height: 100)
     let pixel = PixelData(r: 255, g: 255, b: 255)
-    buffer[(100, 100)] = pixel
+    buffer[(50, 50)] = pixel
 
-    XCTAssertEqual(buffer[(100, 100)], pixel)
+    XCTAssertEqual(buffer[(50, 50)], pixel)
   }
   
 }
