@@ -23,10 +23,9 @@ import Foundation
 
 public typealias PixelCoordinate = (row: Int, column: Int)
 
-
 // MARK: -
 
-public struct Buffer: Sequence {
+public class Buffer: Sequence {
   let width: Int
   let height: Int
   var pixelData: [PixelData]

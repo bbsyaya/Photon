@@ -46,6 +46,7 @@ final class SceneTests: XCTestCase {
 
   func testRenderingWithOneObject() {
     let scene = Scene(width: 3, height: 6)
+
     scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
 
     let expectation = self.expectation(description: "A scene with objects should render an image")
@@ -60,6 +61,22 @@ final class SceneTests: XCTestCase {
       XCTAssertNotNil(image)
       XCTAssertEqual(image?.size.width, 3)
       XCTAssertEqual(image?.size.height, 6)
+    }
+  }
+
+  func testIntegratorUsage() {
+    let integrator = MockIntegrator()
+    let scene = Scene(width: 10, height: 10, integrator: integrator)
+    let expectation = self.expectation(description: "A scene should call its integrator to trace rays")
+
+    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
+
+    scene.renderScene { _ in
+      expectation.fulfill()
+    }
+
+    waitForExpectations(timeout: 10.0) { error in
+      XCTAssertEqual(integrator.traceCount, 100)
     }
   }
 
