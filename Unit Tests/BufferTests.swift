@@ -36,5 +36,16 @@ final class BufferTests: XCTestCase {
 
     XCTAssertEqual(buffer[(50, 50)], pixel)
   }
+
+  func testIteration() {
+    var iterationCount = 0
+    var buffer = Buffer(width: 10, height: 10)
+
+    for pixelCoordinate in buffer {
+      iterationCount += 1
+    }
+
+    XCTAssertEqual(iterationCount, buffer.size)
+  }
   
 }

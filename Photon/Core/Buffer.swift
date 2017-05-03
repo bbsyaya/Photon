@@ -30,6 +30,10 @@ public class Buffer: Sequence {
   let height: Int
   var pixelData: [PixelData]
 
+  var size: Int {
+    return width * height
+  }
+
   /// Initializes a new Buffer with an array of pixel data containing black pixels.
   init(width: Int, height: Int) {
     self.width = width
@@ -63,7 +67,8 @@ public class Buffer: Sequence {
 
   // MARK: Sequence
 
-  let start: PixelCoordinate = (0, 0)
+  fileprivate let start: PixelCoordinate = (0, 0)
+  fileprivate var current: PixelCoordinate = (0, 0)
 
   public func makeIterator() -> BufferIterator {
     return BufferIterator(self)
@@ -75,13 +80,20 @@ public class Buffer: Sequence {
 
 public struct BufferIterator: IteratorProtocol {
   let buffer: Buffer
-  var times = 0
 
   init(_ buffer: Buffer) {
     self.buffer = buffer
   }
 
   public mutating func next() -> PixelCoordinate? {
-    return nil
+    guard buffer.current.row < buffer.height else { return nil }
+    
+    if buffer.current.column >= (buffer.width - 1) {
+      buffer.current = (buffer.current.row + 1, 0)
+      return buffer.current
+    } else {
+      buffer.current.column += 1
+      return buffer.current
+    }
   }
 }

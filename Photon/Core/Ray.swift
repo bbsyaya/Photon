@@ -1,4 +1,4 @@
-// Scene.swift
+// Ray.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
