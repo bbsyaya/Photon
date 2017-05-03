@@ -60,8 +60,8 @@ public final class Scene {
     geometricObjects.append(contentsOf: objectArray)
   }
 
-  public func renderScene(completion: SceneRenderingCompletion) {
-    guard objects.count > 0 else { completion(nil); return }
+  public func renderScene(_ sceneCompletion: @escaping SceneRenderingCompletion) {
+    guard objects.count > 0 else { sceneCompletion(nil); return }
 
     for column in 0 ..< width {
       for row in 0 ..< height {
@@ -70,11 +70,11 @@ public final class Scene {
     }
 
     let pixel = PixelData(r: 255, g: 0, b: 0)
-    let imageData = [PixelData](repeating: pixel, count: 200 * 200)
-    let image = Image.image(from: imageData, width: 200, height: 200)
+    let imageData = [PixelData](repeating: pixel, count: width * height)
+    let image = Image.image(from: imageData, width: width, height: height)
 
-    callbackQueue.sync {
-      completion(image)
+    callbackQueue.async {
+      sceneCompletion(image)
     }
   }
 }

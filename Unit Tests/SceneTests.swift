@@ -44,4 +44,23 @@ final class SceneTests: XCTestCase {
     }
   }
 
+  func testRenderingWithOneObject() {
+    let scene = Scene(width: 3, height: 6)
+    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
+
+    let expectation = self.expectation(description: "A scene with objects should render an image")
+    var image: NSImage? = nil
+
+    scene.renderScene { returnedImage in
+      image = returnedImage
+      expectation.fulfill()
+    }
+
+    waitForExpectations(timeout: 10.0) { error in
+      XCTAssertNotNil(image)
+      XCTAssertEqual(image?.size.width, 3)
+      XCTAssertEqual(image?.size.height, 6)
+    }
+  }
+
 }
