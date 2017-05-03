@@ -42,6 +42,7 @@
 		593D501E1EB9734200BC0591 /* MockIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501D1EB9734200BC0591 /* MockIntegrator.swift */; };
 		593D50201EB97FBE00BC0591 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501F1EB97FBE00BC0591 /* Sphere.swift */; };
 		593D50211EB97FBE00BC0591 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501F1EB97FBE00BC0591 /* Sphere.swift */; };
+		593D50231EB9899F00BC0591 /* SphereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50221EB9899F00BC0591 /* SphereTests.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -99,6 +100,7 @@
 		593D50191EB9705800BC0591 /* BasicIntegrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BasicIntegrator.swift; path = Integrators/BasicIntegrator.swift; sourceTree = "<group>"; };
 		593D501D1EB9734200BC0591 /* MockIntegrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockIntegrator.swift; path = Mock/MockIntegrator.swift; sourceTree = "<group>"; };
 		593D501F1EB97FBE00BC0591 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sphere.swift; path = Shapes/Sphere.swift; sourceTree = "<group>"; };
+		593D50221EB9899F00BC0591 /* SphereTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
 				593D4FE61EB8E2A300BC0591 /* SceneTests.swift */,
+				593D50221EB9899F00BC0591 /* SphereTests.swift */,
 				597773BF1EAFB47F0051EF1D /* VectorTests.swift */,
 				597773B41EAFA0BB0051EF1D /* Info.plist */,
 			);
@@ -446,6 +449,7 @@
 				593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */,
 				593D501B1EB9705800BC0591 /* BasicIntegrator.swift in Sources */,
 				593D4DF11EB56E6F00BC0591 /* Point.swift in Sources */,
+				593D50231EB9899F00BC0591 /* SphereTests.swift in Sources */,
 				593D501E1EB9734200BC0591 /* MockIntegrator.swift in Sources */,
 				593D4DFF1EB656AB00BC0591 /* ImageTests.swift in Sources */,
 				593D50181EB96D2300BC0591 /* Integrator.swift in Sources */,
