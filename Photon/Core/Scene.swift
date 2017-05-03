@@ -24,10 +24,29 @@ import Foundation
 public typealias SceneRenderingCompletion = ((_ image: ImageType?) -> Void)
 
 public final class Scene {
-  private var geometricObjects: [GeometricObject] = []
-
   public var objects: [GeometricObject] {
     return geometricObjects
+  }
+
+  public var width: Int {
+    return pixelBuffer.width
+  }
+
+  public var height: Int {
+    return pixelBuffer.height
+  }
+
+  private var geometricObjects: [GeometricObject] = []
+  private let pixelBuffer: Buffer
+  private let callbackQueue: DispatchQueue
+  private let renderQueue: DispatchQueue = DispatchQueue(label: "Photon Ray Tracing Queue", qos: .userInitiated, attributes: [.concurrent], target: nil)
+
+
+  // MARK: - Initialization
+
+  init(width: Int, height: Int, callbackQueue: DispatchQueue = DispatchQueue.main) {
+    self.pixelBuffer = Buffer(width: width, height: height)
+    self.callbackQueue = callbackQueue
   }
 
 
@@ -44,10 +63,18 @@ public final class Scene {
   public func renderScene(completion: SceneRenderingCompletion) {
     guard objects.count > 0 else { completion(nil); return }
 
+    for column in 0 ..< width {
+      for row in 0 ..< height {
+        print("\(column), \(row)")
+      }
+    }
+
     let pixel = PixelData(r: 255, g: 0, b: 0)
     let imageData = [PixelData](repeating: pixel, count: 200 * 200)
     let image = Image.image(from: imageData, width: 200, height: 200)
 
-    completion(image)
+    callbackQueue.sync {
+      completion(image)
+    }
   }
 }

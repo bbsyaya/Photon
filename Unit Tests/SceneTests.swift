@@ -25,12 +25,12 @@ import XCTest
 final class SceneTests: XCTestCase {
 
   func testInitialization() {
-    let scene = Scene()
+    let scene = Scene(width: 0, height: 0)
     XCTAssertEqual(scene.objects.count, 0)
   }
 
   func testRenderingWithoutObjects() {
-    let scene = Scene()
+    let scene = Scene(width: 3, height: 3)
     let expectation = self.expectation(description: "A scene with no objects should not render an image")
     var image: NSImage? = nil
 

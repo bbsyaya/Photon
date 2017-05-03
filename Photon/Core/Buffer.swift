@@ -23,7 +23,10 @@ import Foundation
 
 public typealias PixelCoordinate = (row: Int, column: Int)
 
-public struct Buffer {
+
+// MARK: -
+
+public struct Buffer: Sequence {
   let width: Int
   let height: Int
   var pixelData: [PixelData]
@@ -47,14 +50,39 @@ public struct Buffer {
   }
 
 
-  // MARK: - Private Functions
+  // MARK: Private Functions
 
-  private func pixelData(at coordinate: PixelCoordinate) -> PixelData {
+  fileprivate func pixelData(at coordinate: PixelCoordinate) -> PixelData {
     return pixelData[index(at: coordinate)]
   }
 
-  private func index(at coordinate: PixelCoordinate) -> Int {
+  fileprivate func index(at coordinate: PixelCoordinate) -> Int {
     let row = width * coordinate.row
     return row + coordinate.column
+  }
+
+
+  // MARK: Sequence
+
+  let start: PixelCoordinate = (0, 0)
+
+  public func makeIterator() -> BufferIterator {
+    return BufferIterator(self)
+  }
+}
+
+
+// MARK: -
+
+public struct BufferIterator: IteratorProtocol {
+  let buffer: Buffer
+  var times = 0
+
+  init(_ buffer: Buffer) {
+    self.buffer = buffer
+  }
+
+  public mutating func next() -> PixelCoordinate? {
+    return nil
   }
 }
