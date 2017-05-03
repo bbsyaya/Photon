@@ -40,7 +40,8 @@ public final class Scene {
   private let pixelBuffer: Buffer
   private let integrator: Integrator
   private let callbackQueue: DispatchQueue
-  private let renderQueue: DispatchQueue = DispatchQueue(label: "Photon Ray Tracing Queue", qos: .userInitiated, attributes: [.concurrent], target: nil)
+  private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: [.concurrent], target: nil)
+  private let renderGroup = DispatchGroup()
 
 
   // MARK: - Initialization
@@ -69,7 +70,7 @@ public final class Scene {
       for row in 0 ..< height {
         let samplePoint = Point3D(Float(column), Float(row), 0)
         let ray = Ray(origin: samplePoint, direction: Vector3D(0, 0, -1))
-        let sampledColor = integrator.trace(ray: ray, depth: 0)
+        _ = integrator.trace(ray: ray, depth: 0)
       }
     }
 
