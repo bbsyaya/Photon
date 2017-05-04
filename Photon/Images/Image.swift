@@ -58,7 +58,7 @@ extension PixelData: Equatable {
 /// from an array of `PixelData` structs.
 public struct Image {
   private static let colorSpace = CGColorSpaceCreateDeviceRGB()
-  private static let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.premultipliedFirst.rawValue)
+  private static let bitmapInfo: CGBitmapInfo = CGBitmapInfo(rawValue: CGImageAlphaInfo.last.rawValue)
 
   /// Returns an image from a given array of `PixelData`.
   ///
@@ -69,8 +69,8 @@ public struct Image {
   /// - Note: The value of `width` * `height` must equal the size of the pixels array.
   ///         This condition is tested with an assert.
   public static func image(from pixels: [PixelData], width: Int, height: Int) -> ImageType? {
-    let bitsPerComponent: Int = 8
-    let bitsPerPixel: Int = 32
+    let bitsPerComponent: Int = MemoryLayout<UInt8>.size * 8
+    let bitsPerPixel: Int = MemoryLayout<PixelData>.size * 8
 
     assert(pixels.count == Int(width * height), "The pixel count should match the provided image size")
 
