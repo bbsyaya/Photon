@@ -38,6 +38,7 @@ public final class Scene {
 
   private var geometricObjects: [GeometricObject] = []
   private let pixelBuffer: Buffer
+  private let camera: Camera
   private let integrator: Integrator
   private let callbackQueue: DispatchQueue
   private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: [.concurrent], target: nil)
@@ -45,8 +46,9 @@ public final class Scene {
 
   // MARK: - Initialization
 
-  init(width: Int, height: Int, integrator: Integrator = BasicIntegrator(), callbackQueue: DispatchQueue = DispatchQueue.main) {
+  public init(width: Int, height: Int, camera: Camera, integrator: Integrator = BasicIntegrator(), callbackQueue: DispatchQueue = DispatchQueue.main) {
     self.pixelBuffer = Buffer(width: width, height: height)
+    self.camera = camera
     self.integrator = integrator
     self.callbackQueue = callbackQueue
   }
@@ -67,15 +69,14 @@ public final class Scene {
 
     for column in 0 ..< width {
       for row in 0 ..< height {
-        let samplePoint = Point3D(Float(column), Float(row), 0)
-        let ray = Ray(origin: samplePoint, direction: Vector3D(0, 0, -1))
-        _ = integrator.trace(ray: ray, depth: 0)
+        let ray = camera.castRayAt(x: Float(column), y: Float(row))
+        let color = integrator.trace(ray: ray, depth: 0)
+        pixelBuffer[(column, row)] = color
       }
     }
 
-    let pixel = PixelData(r: 255, g: 0, b: 0)
-    let imageData = [PixelData](repeating: pixel, count: width * height)
-    let image = Image.image(from: imageData, width: width, height: height)
+    print(pixelBuffer.pixelData)
+    let image = Image.image(from: pixelBuffer.pixelData, width: width, height: height)
 
     callbackQueue.async {
       sceneCompletion(image)

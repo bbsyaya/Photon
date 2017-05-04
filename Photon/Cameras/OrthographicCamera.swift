@@ -21,7 +21,12 @@
 
 import Foundation
 
+/// Defines a camera with an orthographic projection. This camera creates rays
+/// which are orthogonal to the film plane, meaning that objects will not change
+/// size depending on their distance from the camera.
 public final class OrthographicCamera: Camera {
+
+  public init() {}
 
   // MARK: - Camera
 

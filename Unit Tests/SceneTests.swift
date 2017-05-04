@@ -25,12 +25,12 @@ import XCTest
 final class SceneTests: XCTestCase {
 
   func testInitialization() {
-    let scene = Scene(width: 0, height: 0)
+    let scene = Scene(width: 0, height: 0, camera: OrthographicCamera())
     XCTAssertEqual(scene.objects.count, 0)
   }
 
   func testRenderingWithoutObjects() {
-    let scene = Scene(width: 3, height: 3)
+    let scene = Scene(width: 3, height: 3, camera: OrthographicCamera())
     let expectation = self.expectation(description: "A scene with no objects should not render an image")
     var image: NSImage? = nil
 
@@ -45,7 +45,7 @@ final class SceneTests: XCTestCase {
   }
 
   func testRenderingWithOneObject() {
-    let scene = Scene(width: 3, height: 6)
+    let scene = Scene(width: 3, height: 6, camera: OrthographicCamera())
 
     scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
 
@@ -66,7 +66,7 @@ final class SceneTests: XCTestCase {
 
   func testIntegratorUsage() {
     let integrator = MockIntegrator()
-    let scene = Scene(width: 10, height: 10, integrator: integrator)
+    let scene = Scene(width: 10, height: 10, camera: OrthographicCamera(), integrator: integrator)
     let expectation = self.expectation(description: "A scene should call its integrator to trace rays")
 
     scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))

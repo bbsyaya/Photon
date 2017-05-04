@@ -25,7 +25,7 @@ public final class Plane: GeometricObject {
   let point: Point3D
   let normal: Normal
 
-  init(point: Point3D, normal: Normal) {
+  public init(point: Point3D, normal: Normal) {
     self.point = point
     self.normal = normal.normalized()
   }

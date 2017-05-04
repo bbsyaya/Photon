@@ -29,7 +29,7 @@ public final class Sphere: GeometricObject {
     return radius * radius
   }
 
-  init(center: Point3D, radius: Float) {
+  public init(center: Point3D, radius: Float) {
     self.center = center
     self.radius = radius
   }

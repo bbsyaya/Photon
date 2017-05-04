@@ -21,6 +21,10 @@
 
 import Foundation
 
+/// Defines the interface used by camera objects to calculate ray trajectories.
+/// This can be implemented and passed to a `Scene` object in order to display
+/// different types of images, such as those with orthographic or perspective
+/// projection.
 public protocol Camera {
   func castRayAt(x: Float, y: Float) -> Ray
 }
