@@ -67,11 +67,11 @@ public final class Scene {
   public func renderScene(_ sceneCompletion: @escaping SceneRenderingCompletion) {
     guard objects.count > 0 else { sceneCompletion(nil); return }
 
-    for column in 0 ..< width {
-      for row in 0 ..< height {
+    for row in 0 ..< height {
+      for column in 0 ..< width {
         let ray = camera.castRayAt(x: Float(column), y: Float(row))
         let color = integrator.trace(ray: ray, depth: 0)
-        pixelBuffer[(column, row)] = color
+        pixelBuffer[(row, column)] = color
       }
     }
 

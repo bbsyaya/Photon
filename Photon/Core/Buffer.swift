@@ -48,9 +48,7 @@ public class Buffer: Sequence {
       return pixelData(at: coordinate)
     }
     set {
-      // print("Writing pixel (\(newValue)) at index \(index(at: coordinate))")
       pixelData[index(at: coordinate)] = newValue
-      // print("Wrote pixel (\(pixelData(at: coordinate))) at index \(index(at: coordinate))")
     }
   }
 
