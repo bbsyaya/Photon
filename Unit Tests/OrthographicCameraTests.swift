@@ -1,4 +1,4 @@
-// BufferTests.swift
+// OrthographicCameraTests.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,30 +22,17 @@
 import Foundation
 import XCTest
 
-final class BufferTests: XCTestCase {
+final class OrthographicCameraTests: XCTestCase {
 
-  func testInitialization() {
-    let buffer = Buffer(width: 100, height: 100)
-    XCTAssertEqual(buffer.pixelData.count, 100 * 100)
+  func testCastingRays() {
+    let camera = OrthographicCamera()
+    let ray = camera.castRayAt(x: 1, y: 2)
+
+    XCTAssertEqual(ray.origin.x, 1)
+    XCTAssertEqual(ray.origin.y, 2)
+    XCTAssertEqual(ray.direction.x, 0)
+    XCTAssertEqual(ray.direction.y, 0)
+    XCTAssertEqual(ray.direction.z, -1)
   }
 
-  func testSubscripts() {
-    let buffer = Buffer(width: 100, height: 100)
-    let pixel = PixelData(r: 255, g: 255, b: 255)
-    buffer[(50, 50)] = pixel
-
-    XCTAssertEqual(buffer[(50, 50)], pixel)
-  }
-
-  func testIteration() {
-    var iterationCount = 0
-    let buffer = Buffer(width: 10, height: 10)
-
-    for _ in buffer {
-      iterationCount += 1
-    }
-
-    XCTAssertEqual(iterationCount, buffer.size)
-  }
-  
 }

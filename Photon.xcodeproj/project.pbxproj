@@ -43,6 +43,11 @@
 		593D50201EB97FBE00BC0591 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501F1EB97FBE00BC0591 /* Sphere.swift */; };
 		593D50211EB97FBE00BC0591 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501F1EB97FBE00BC0591 /* Sphere.swift */; };
 		593D50231EB9899F00BC0591 /* SphereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50221EB9899F00BC0591 /* SphereTests.swift */; };
+		593D510A1EBAA71900BC0591 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D51091EBAA71900BC0591 /* Camera.swift */; };
+		593D510B1EBAA71900BC0591 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D51091EBAA71900BC0591 /* Camera.swift */; };
+		593D510D1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */; };
+		593D510E1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */; };
+		593D51101EBAAB3500BC0591 /* OrthographicCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
@@ -101,6 +106,9 @@
 		593D501D1EB9734200BC0591 /* MockIntegrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MockIntegrator.swift; path = Mock/MockIntegrator.swift; sourceTree = "<group>"; };
 		593D501F1EB97FBE00BC0591 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Sphere.swift; path = Shapes/Sphere.swift; sourceTree = "<group>"; };
 		593D50221EB9899F00BC0591 /* SphereTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereTests.swift; sourceTree = "<group>"; };
+		593D51091EBAA71900BC0591 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Camera.swift; path = Cameras/Camera.swift; sourceTree = "<group>"; };
+		593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrthographicCamera.swift; path = Cameras/OrthographicCamera.swift; sourceTree = "<group>"; };
+		593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthographicCameraTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -199,6 +207,15 @@
 			name = Mock;
 			sourceTree = "<group>";
 		};
+		593D51081EBAA70800BC0591 /* Cameras */ = {
+			isa = PBXGroup;
+			children = (
+				593D51091EBAA71900BC0591 /* Camera.swift */,
+				593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */,
+			);
+			name = Cameras;
+			sourceTree = "<group>";
+		};
 		597773971EAF9AB10051EF1D = {
 			isa = PBXGroup;
 			children = (
@@ -222,6 +239,7 @@
 		597773A31EAF9AB10051EF1D /* Photon */ = {
 			isa = PBXGroup;
 			children = (
+				593D51081EBAA70800BC0591 /* Cameras */,
 				593D4DF41EB6465900BC0591 /* Images */,
 				593D50151EB96AA700BC0591 /* Integrators */,
 				593D4DEA1EB56CD700BC0591 /* Materials */,
@@ -240,6 +258,7 @@
 				593D501C1EB9732C00BC0591 /* Mock */,
 				593D4FEB1EB8F30700BC0591 /* BufferTests.swift */,
 				593D4DFE1EB656AB00BC0591 /* ImageTests.swift */,
+				593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */,
 				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
 				593D4FE61EB8E2A300BC0591 /* SceneTests.swift */,
@@ -426,11 +445,13 @@
 				593D50171EB96D2300BC0591 /* Integrator.swift in Sources */,
 				593D4FE41EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
+				593D510D1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
 				593D501A1EB9705800BC0591 /* BasicIntegrator.swift in Sources */,
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DF61EB6471700BC0591 /* Scene.swift in Sources */,
 				597773BD1EAFB1750051EF1D /* Vector.swift in Sources */,
 				593D4FE91EB8F1E000BC0591 /* Buffer.swift in Sources */,
+				593D510A1EBAA71900BC0591 /* Camera.swift in Sources */,
 				593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
 				593D4E171EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */,
@@ -450,6 +471,7 @@
 				593D501B1EB9705800BC0591 /* BasicIntegrator.swift in Sources */,
 				593D4DF11EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D50231EB9899F00BC0591 /* SphereTests.swift in Sources */,
+				593D51101EBAAB3500BC0591 /* OrthographicCameraTests.swift in Sources */,
 				593D501E1EB9734200BC0591 /* MockIntegrator.swift in Sources */,
 				593D4DFF1EB656AB00BC0591 /* ImageTests.swift in Sources */,
 				593D50181EB96D2300BC0591 /* Integrator.swift in Sources */,
@@ -459,9 +481,11 @@
 				593D50211EB97FBE00BC0591 /* Sphere.swift in Sources */,
 				593D4E151EB6C1BB00BC0591 /* PlaneTests.swift in Sources */,
 				593D4E131EB6C12600BC0591 /* Plane.swift in Sources */,
+				593D510B1EBAA71900BC0591 /* Camera.swift in Sources */,
 				593D4E181EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */,
 				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
+				593D510E1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
 				593D4FE71EB8E2A300BC0591 /* SceneTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

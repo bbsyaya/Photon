@@ -87,7 +87,7 @@ public struct BufferIterator: IteratorProtocol {
 
   public mutating func next() -> PixelCoordinate? {
     guard buffer.current.row < buffer.height else { return nil }
-    
+
     if buffer.current.column >= (buffer.width - 1) {
       buffer.current = (buffer.current.row + 1, 0)
       return buffer.current
