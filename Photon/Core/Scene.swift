@@ -41,7 +41,6 @@ public final class Scene {
   private let integrator: Integrator
   private let callbackQueue: DispatchQueue
   private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: [.concurrent], target: nil)
-  private let renderGroup = DispatchGroup()
 
 
   // MARK: - Initialization
