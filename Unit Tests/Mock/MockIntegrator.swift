@@ -23,9 +23,14 @@ import Foundation
 
 final class MockIntegrator: Integrator {
   var traceCount: Int = 0
+  let pixelValue: UInt8
+
+  init(pixelValue: UInt8) {
+    self.pixelValue = pixelValue
+  }
 
   func trace(ray: Ray, depth: Int) -> PixelData {
     traceCount += 1
-    return PixelData(r: 0, g: 0, b: 0)
+    return PixelData(r: pixelValue, g: pixelValue, b: pixelValue)
   }
 }

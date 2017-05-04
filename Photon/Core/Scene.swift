@@ -75,7 +75,6 @@ public final class Scene {
       }
     }
 
-    print(pixelBuffer.pixelData)
     let image = Image.image(from: pixelBuffer.pixelData, width: width, height: height)
 
     callbackQueue.async {
