@@ -14,5 +14,4 @@ test:
       xcodebuild
       -workspace Photon.xcworkspace
       -scheme "CLI"
-      clean build |
-      xcpretty --color --report junit --output $CIRCLE_TEST_REPORTS/xcode/results.xml
+      clean build
