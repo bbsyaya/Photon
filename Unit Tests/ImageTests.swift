@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
+import AppKit
 import XCTest
 
 final class ImageTests: XCTestCase {
