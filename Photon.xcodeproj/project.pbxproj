@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5919C5271EBC21020053FDEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5919C5261EBC21020053FDEC /* Foundation.framework */; };
+		5919C52B1EBCE4190053FDEC /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5919C52A1EBCE4190053FDEC /* AppKit.framework */; };
 		593D4DE51EB543DB00BC0591 /* Photon.h in Headers */ = {isa = PBXBuildFile; fileRef = 597773A41EAF9AB10051EF1D /* Photon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DEC1EB56CFE00BC0591 /* Ray.swift */; };
 		593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DEC1EB56CFE00BC0591 /* Ray.swift */; };
@@ -87,6 +88,7 @@
 /* Begin PBXFileReference section */
 		5919C5261EBC21020053FDEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5919C5291EBCD36B0053FDEC /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
+		5919C52A1EBCE4190053FDEC /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		593D4DEC1EB56CFE00BC0591 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
 		593D4DEF1EB56E6F00BC0591 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		593D4DF21EB56F9D00BC0591 /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5919C52B1EBCE4190053FDEC /* AppKit.framework in Frameworks */,
 				597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,6 +155,7 @@
 		5919C5251EBC21020053FDEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5919C52A1EBCE4190053FDEC /* AppKit.framework */,
 				5919C5261EBC21020053FDEC /* Foundation.framework */,
 			);
 			name = Frameworks;
