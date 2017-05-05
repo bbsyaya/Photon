@@ -23,10 +23,25 @@ import Foundation
 
 public final class BasicIntegrator: Integrator {
 
+  // Having the integrator know about the scene directly is not great. It should
+  // only need to know about where to find objects to check intersections with.
+  // A cleaner approach may be to have a `GeometricObjectProvider` which returns
+  // an array of objects, so that this class can be more generalized.
+  public weak var scene: Scene?
+
   // MARK: - Integrator
 
   public func trace(ray: Ray, depth: Int = 0) -> PixelData {
-    return PixelData.init(r: 0, g: 255, b: 0)
+    guard let scene = self.scene else { preconditionFailure("The integrator should always have a scene") }
+
+    for object in scene.objects {
+      let intersection = object.intersection(with: ray)
+      if intersection.isHit {
+        return PixelData.init(r: 255, g: 0, b: 0)
+      }
+    }
+
+    return PixelData.init(r: 0, g: 0, b: 0)
   }
 
 }

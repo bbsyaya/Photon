@@ -51,6 +51,13 @@ public final class Scene {
     self.camera = camera
     self.integrator = integrator
     self.callbackQueue = callbackQueue
+
+    // TO-DO: This is a hack for the sake of generating some images. There needs
+    // to be a smarter design for providing scene objects to the integrators
+    // while still allowing a general Integrator protocol. This should be fixed!
+    if let basicIntegrator = self.integrator as? BasicIntegrator {
+      basicIntegrator.scene = self
+    }
   }
 
 
