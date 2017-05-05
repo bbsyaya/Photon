@@ -20,7 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
-import AppKit
+import Cocoa
 import XCTest
 
 final class SceneTests: XCTestCase {
