@@ -86,6 +86,7 @@
 
 /* Begin PBXFileReference section */
 		5919C5261EBC21020053FDEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5919C5291EBCD36B0053FDEC /* README.markdown */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.markdown; sourceTree = "<group>"; };
 		593D4DEC1EB56CFE00BC0591 /* Ray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ray.swift; sourceTree = "<group>"; };
 		593D4DEF1EB56E6F00BC0591 /* Point.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Point.swift; sourceTree = "<group>"; };
 		593D4DF21EB56F9D00BC0591 /* PointTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTests.swift; sourceTree = "<group>"; };
@@ -166,6 +167,7 @@
 		593D4DE61EB56BC400BC0591 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
+				5919C5291EBCD36B0053FDEC /* README.markdown */,
 				593D4FE31EB8DEEF00BC0591 /* GeometricObject.swift */,
 				593D4E111EB6C12600BC0591 /* Plane.swift */,
 				593D501F1EB97FBE00BC0591 /* Sphere.swift */,
