@@ -65,24 +65,4 @@ final class SceneTests: XCTestCase {
     }
   }
 
-  func testIntegratorUsage() {
-    let pixelValue: UInt8 = 33
-    let integrator = MockIntegrator(pixelValue: pixelValue)
-    let scene = Scene(width: 10, height: 10, camera: OrthographicCamera(), integrator: integrator)
-    let expectation = self.expectation(description: "A scene should call its integrator to trace rays")
-
-    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
-
-    scene.renderScene { returnedImage in
-      let data = returnedImage!.tiffRepresentation!
-      XCTAssertEqual(data[16], pixelValue)
-      
-      expectation.fulfill()
-    }
-
-    waitForExpectations(timeout: 10.0) { error in
-      XCTAssertEqual(integrator.traceCount, 100)
-    }
-  }
-
 }

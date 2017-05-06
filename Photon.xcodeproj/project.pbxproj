@@ -37,11 +37,8 @@
 		593D4FE91EB8F1E000BC0591 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE81EB8F1E000BC0591 /* Buffer.swift */; };
 		593D4FEA1EB8F1E000BC0591 /* Buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FE81EB8F1E000BC0591 /* Buffer.swift */; };
 		593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4FEB1EB8F30700BC0591 /* BufferTests.swift */; };
-		593D50171EB96D2300BC0591 /* Integrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50161EB96D2300BC0591 /* Integrator.swift */; };
-		593D50181EB96D2300BC0591 /* Integrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50161EB96D2300BC0591 /* Integrator.swift */; };
-		593D501A1EB9705800BC0591 /* BasicIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50191EB9705800BC0591 /* BasicIntegrator.swift */; };
-		593D501B1EB9705800BC0591 /* BasicIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50191EB9705800BC0591 /* BasicIntegrator.swift */; };
-		593D501E1EB9734200BC0591 /* MockIntegrator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501D1EB9734200BC0591 /* MockIntegrator.swift */; };
+		593D501A1EB9705800BC0591 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50191EB9705800BC0591 /* Renderer.swift */; };
+		593D501B1EB9705800BC0591 /* Renderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50191EB9705800BC0591 /* Renderer.swift */; };
 		593D50201EB97FBE00BC0591 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501F1EB97FBE00BC0591 /* Sphere.swift */; };
 		593D50211EB97FBE00BC0591 /* Sphere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D501F1EB97FBE00BC0591 /* Sphere.swift */; };
 		593D50231EB9899F00BC0591 /* SphereTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D50221EB9899F00BC0591 /* SphereTests.swift */; };
@@ -106,9 +103,7 @@
 		593D4FE61EB8E2A300BC0591 /* SceneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneTests.swift; sourceTree = "<group>"; };
 		593D4FE81EB8F1E000BC0591 /* Buffer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buffer.swift; sourceTree = "<group>"; };
 		593D4FEB1EB8F30700BC0591 /* BufferTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BufferTests.swift; sourceTree = "<group>"; };
-		593D50161EB96D2300BC0591 /* Integrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Integrator.swift; sourceTree = "<group>"; };
-		593D50191EB9705800BC0591 /* BasicIntegrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicIntegrator.swift; sourceTree = "<group>"; };
-		593D501D1EB9734200BC0591 /* MockIntegrator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockIntegrator.swift; sourceTree = "<group>"; };
+		593D50191EB9705800BC0591 /* Renderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Renderer.swift; sourceTree = "<group>"; };
 		593D501F1EB97FBE00BC0591 /* Sphere.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sphere.swift; sourceTree = "<group>"; };
 		593D50221EB9899F00BC0591 /* SphereTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SphereTests.swift; sourceTree = "<group>"; };
 		593D51091EBAA71900BC0591 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
@@ -189,6 +184,7 @@
 		593D4DEB1EB56CDC00BC0591 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				593D50191EB9705800BC0591 /* Renderer.swift */,
 				593D4FE81EB8F1E000BC0591 /* Buffer.swift */,
 				593D4E161EB6DA9B00BC0591 /* Intersection.swift */,
 				593D4DEC1EB56CFE00BC0591 /* Ray.swift */,
@@ -212,23 +208,6 @@
 				593D4E091EB6A53000BC0591 /* main.swift */,
 			);
 			path = CLI;
-			sourceTree = "<group>";
-		};
-		593D50151EB96AA700BC0591 /* Integrators */ = {
-			isa = PBXGroup;
-			children = (
-				593D50161EB96D2300BC0591 /* Integrator.swift */,
-				593D50191EB9705800BC0591 /* BasicIntegrator.swift */,
-			);
-			path = Integrators;
-			sourceTree = "<group>";
-		};
-		593D501C1EB9732C00BC0591 /* Mock */ = {
-			isa = PBXGroup;
-			children = (
-				593D501D1EB9734200BC0591 /* MockIntegrator.swift */,
-			);
-			path = Mock;
 			sourceTree = "<group>";
 		};
 		593D51081EBAA70800BC0591 /* Cameras */ = {
@@ -267,7 +246,6 @@
 				5919C5281EBC26320053FDEC /* Samplers */,
 				593D51081EBAA70800BC0591 /* Cameras */,
 				593D4DF41EB6465900BC0591 /* Images */,
-				593D50151EB96AA700BC0591 /* Integrators */,
 				593D4DEA1EB56CD700BC0591 /* Materials */,
 				597773BB1EAFA7120051EF1D /* Math */,
 				593D4DEB1EB56CDC00BC0591 /* Core */,
@@ -281,7 +259,6 @@
 		597773B11EAFA0BB0051EF1D /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
-				593D501C1EB9732C00BC0591 /* Mock */,
 				593D4FEB1EB8F30700BC0591 /* BufferTests.swift */,
 				593D4DFE1EB656AB00BC0591 /* ImageTests.swift */,
 				593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */,
@@ -468,11 +445,10 @@
 				593D50201EB97FBE00BC0591 /* Sphere.swift in Sources */,
 				593D4E011EB6907D00BC0591 /* Normal.swift in Sources */,
 				593D4E121EB6C12600BC0591 /* Plane.swift in Sources */,
-				593D50171EB96D2300BC0591 /* Integrator.swift in Sources */,
 				593D4FE41EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D510D1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
-				593D501A1EB9705800BC0591 /* BasicIntegrator.swift in Sources */,
+				593D501A1EB9705800BC0591 /* Renderer.swift in Sources */,
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DF61EB6471700BC0591 /* Scene.swift in Sources */,
 				597773BD1EAFB1750051EF1D /* Vector.swift in Sources */,
@@ -494,13 +470,11 @@
 				593D4FE51EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DFA1EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */,
-				593D501B1EB9705800BC0591 /* BasicIntegrator.swift in Sources */,
+				593D501B1EB9705800BC0591 /* Renderer.swift in Sources */,
 				593D4DF11EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D50231EB9899F00BC0591 /* SphereTests.swift in Sources */,
 				593D51101EBAAB3500BC0591 /* OrthographicCameraTests.swift in Sources */,
-				593D501E1EB9734200BC0591 /* MockIntegrator.swift in Sources */,
 				593D4DFF1EB656AB00BC0591 /* ImageTests.swift in Sources */,
-				593D50181EB96D2300BC0591 /* Integrator.swift in Sources */,
 				597773BE1EAFB1750051EF1D /* Vector.swift in Sources */,
 				593D4DF71EB6471700BC0591 /* Scene.swift in Sources */,
 				597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */,

@@ -1,4 +1,4 @@
-// BasicIntegrator.swift
+// Renderer.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,20 +21,13 @@
 
 import Foundation
 
-public final class BasicIntegrator: Integrator {
+public final class Renderer {
+  public var geometricObjects: [GeometricObject] = []
 
-  // Having the integrator know about the scene directly is not great. It should
-  // only need to know about where to find objects to check intersections with.
-  // A cleaner approach may be to have a `GeometricObjectProvider` which returns
-  // an array of objects, so that this class can be more generalized.
-  public weak var scene: Scene?
-
-  // MARK: - Integrator
+  // MARK: - Renderer
 
   public func trace(ray: Ray, depth: Int = 0) -> PixelData {
-    guard let scene = self.scene else { preconditionFailure("The integrator should always have a scene") }
-
-    for object in scene.objects {
+    for object in geometricObjects {
       let intersection = object.intersection(with: ray)
       if intersection.isHit {
         return PixelData.init(r: 255, g: 0, b: 0)

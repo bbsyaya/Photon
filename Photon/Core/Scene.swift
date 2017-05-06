@@ -39,25 +39,19 @@ public final class Scene {
   private var geometricObjects: [GeometricObject] = []
   private let pixelBuffer: Buffer
   private let camera: Camera
-  private let integrator: Integrator
+  private let renderer: Renderer
   private let callbackQueue: DispatchQueue
   private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: [.concurrent], target: nil)
 
 
   // MARK: - Initialization
 
-  public init(width: Int, height: Int, camera: Camera, integrator: Integrator = BasicIntegrator(), callbackQueue: DispatchQueue = DispatchQueue.main) {
+  public init(width: Int, height: Int, camera: Camera, callbackQueue: DispatchQueue = DispatchQueue.main) {
     self.pixelBuffer = Buffer(width: width, height: height)
     self.camera = camera
-    self.integrator = integrator
     self.callbackQueue = callbackQueue
 
-    // TO-DO: This is a hack for the sake of generating some images. There needs
-    // to be a smarter design for providing scene objects to the integrators
-    // while still allowing a general Integrator protocol. This should be fixed!
-    if let basicIntegrator = self.integrator as? BasicIntegrator {
-      basicIntegrator.scene = self
-    }
+    self.renderer = Renderer()
   }
 
 
@@ -65,10 +59,12 @@ public final class Scene {
 
   public func add(object: GeometricObject) {
     geometricObjects.append(object)
+    renderer.geometricObjects = geometricObjects
   }
 
   public func add(objects objectArray: [GeometricObject]) {
     geometricObjects.append(contentsOf: objectArray)
+    renderer.geometricObjects = geometricObjects
   }
 
   public func renderScene(_ sceneCompletion: @escaping SceneRenderingCompletion) {
@@ -77,7 +73,7 @@ public final class Scene {
     for row in 0 ..< height {
       for column in 0 ..< width {
         let ray = camera.castRayAt(x: Float(column), y: Float(row))
-        let color = integrator.trace(ray: ray, depth: 0)
+        let color = renderer.trace(ray: ray, depth: 0)
         pixelBuffer[(row, column)] = color
       }
     }
