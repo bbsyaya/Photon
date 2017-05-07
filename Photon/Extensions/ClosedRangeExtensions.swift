@@ -1,4 +1,4 @@
-// JitteredSampler.swift
+// ClosedRangeExtensions.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,28 +21,11 @@
 
 import Foundation
 
-public final class JitteredSampler: Sampler {
-  private let minimum: Float = 0.0
-  private let maximum: Float = 1.0
+extension ClosedRange where Bound : BinaryFloatingPoint {
+  public func random() -> Bound {
+    let range = self.upperBound - self.lowerBound
+    let randomValue = (Bound(arc4random_uniform(UINT32_MAX)) / Bound(UINT32_MAX)) * range + self.lowerBound
 
-  init(bundleSize: Int) {
-    self.sampleBundleSize = bundleSize
-  }
-
-  // MARK: - Sampler
-
-  public var sampleBundleSize: Int
-
-  public func generateSampleBundle(at point: Point2D) -> [Point2D] {
-    var samples: [Point2D] = []
-
-    for _ in 1...sampleBundleSize {
-      let randomX = (minimum...maximum).random()
-      let randomY = (minimum...maximum).random()
-
-      samples.append(Point2D(point.x + randomX, point.y + randomY))
-    }
-
-    return samples
+    return randomValue
   }
 }

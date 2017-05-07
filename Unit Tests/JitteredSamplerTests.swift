@@ -25,8 +25,25 @@ import XCTest
 final class JitteredSamplerTests: XCTestCase {
 
   func testInitialization() {
+    let sampler = JitteredSampler(bundleSize: 10)
+    XCTAssertEqual(sampler.sampleBundleSize, 10)
+  }
+
+  func testSampleSizeGeneration() {
     let sampler = JitteredSampler(bundleSize: 20)
-    XCTAssertEqual(sampler.sampleBundleSize, 20)
+    let samples = sampler.generateSampleBundle(at: Point2D.zero)
+
+    XCTAssertEqual(samples.count, 20)
+  }
+
+  func testSamplePointOffsets() {
+    let sampler = JitteredSampler(bundleSize: 30)
+    let samples = sampler.generateSampleBundle(at: Point2D(3, 10))
+
+    for sample in samples {
+      XCTAssert(sample.x >= 3 && sample.x <= 4)
+      XCTAssert(sample.y >= 10 && sample.y <= 11)
+    }
   }
 
 }

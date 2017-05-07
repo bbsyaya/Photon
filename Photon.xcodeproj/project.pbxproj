@@ -56,6 +56,8 @@
 		59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFC1EBFABE400D577BD /* Sampler.swift */; };
 		59D3FFFE1EBFABE400D577BD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFC1EBFABE400D577BD /* Sampler.swift */; };
 		59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */; };
+		59E042201EBFD92A00BA6DEC /* ClosedRangeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */; };
+		59E042211EBFDB3B00BA6DEC /* ClosedRangeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +117,7 @@
 		593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthographicCamera.swift; sourceTree = "<group>"; };
 		593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthographicCameraTests.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Photon.h; sourceTree = "<group>"; };
+		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Photon.h; path = ../Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773B41EAFA0BB0051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		59D3FFFC1EBFABE400D577BD /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSampler.swift; sourceTree = "<group>"; };
 		59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSamplerTests.swift; sourceTree = "<group>"; };
+		59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedRangeExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				5919C5291EBCD36B0053FDEC /* README.markdown */,
+				597773A41EAF9AB10051EF1D /* Photon.h */,
 				593D4FE31EB8DEEF00BC0591 /* GeometricObject.swift */,
 				593D4E111EB6C12600BC0591 /* Plane.swift */,
 				593D501F1EB97FBE00BC0591 /* Sphere.swift */,
@@ -253,14 +257,14 @@
 		597773A31EAF9AB10051EF1D /* Photon */ = {
 			isa = PBXGroup;
 			children = (
-				5919C5281EBC26320053FDEC /* Samplers */,
 				593D51081EBAA70800BC0591 /* Cameras */,
+				593D4DEB1EB56CDC00BC0591 /* Core */,
+				59E0421E1EBFD84B00BA6DEC /* Extensions */,
 				593D4DF41EB6465900BC0591 /* Images */,
 				593D4DEA1EB56CD700BC0591 /* Materials */,
 				597773BB1EAFA7120051EF1D /* Math */,
-				593D4DEB1EB56CDC00BC0591 /* Core */,
+				5919C5281EBC26320053FDEC /* Samplers */,
 				593D4DE61EB56BC400BC0591 /* Shapes */,
-				597773A41EAF9AB10051EF1D /* Photon.h */,
 				597773A51EAF9AB10051EF1D /* Info.plist */,
 			);
 			path = Photon;
@@ -291,6 +295,14 @@
 				593D4E001EB6907D00BC0591 /* Normal.swift */,
 			);
 			path = Math;
+			sourceTree = "<group>";
+		};
+		59E0421E1EBFD84B00BA6DEC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,6 +478,7 @@
 				593D4FE91EB8F1E000BC0591 /* Buffer.swift in Sources */,
 				593D510A1EBAA71900BC0591 /* Camera.swift in Sources */,
 				59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */,
+				59E042201EBFD92A00BA6DEC /* ClosedRangeExtensions.swift in Sources */,
 				593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
 				59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */,
 				593D4E171EB6DA9B00BC0591 /* Intersection.swift in Sources */,
@@ -481,6 +494,7 @@
 				593D4FEA1EB8F1E000BC0591 /* Buffer.swift in Sources */,
 				593D4DF31EB56F9D00BC0591 /* PointTests.swift in Sources */,
 				59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */,
+				59E042211EBFDB3B00BA6DEC /* ClosedRangeExtensions.swift in Sources */,
 				593D4FE51EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DFA1EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */,
