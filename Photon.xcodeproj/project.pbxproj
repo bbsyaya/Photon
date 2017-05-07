@@ -51,8 +51,11 @@
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773BE1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BF1EAFB47F0051EF1D /* VectorTests.swift */; };
+		59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */; };
+		59D300011EBFB0D100D577BD /* JitteredSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */; };
 		59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFC1EBFABE400D577BD /* Sampler.swift */; };
 		59D3FFFE1EBFABE400D577BD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFC1EBFABE400D577BD /* Sampler.swift */; };
+		59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +122,8 @@
 		597773BC1EAFB1750051EF1D /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector.swift; sourceTree = "<group>"; };
 		597773BF1EAFB47F0051EF1D /* VectorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VectorTests.swift; sourceTree = "<group>"; };
 		59D3FFFC1EBFABE400D577BD /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
+		59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSampler.swift; sourceTree = "<group>"; };
+		59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSamplerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				59D3FFFC1EBFABE400D577BD /* Sampler.swift */,
+				59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */,
 			);
 			path = Samplers;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			children = (
 				593D4FEB1EB8F30700BC0591 /* BufferTests.swift */,
 				593D4DFE1EB656AB00BC0591 /* ImageTests.swift */,
+				59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */,
 				593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */,
 				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
@@ -460,6 +467,7 @@
 				593D510A1EBAA71900BC0591 /* Camera.swift in Sources */,
 				59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */,
 				593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
+				59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */,
 				593D4E171EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */,
 			);
@@ -472,6 +480,7 @@
 				593D4DFD1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
 				593D4FEA1EB8F1E000BC0591 /* Buffer.swift in Sources */,
 				593D4DF31EB56F9D00BC0591 /* PointTests.swift in Sources */,
+				59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */,
 				593D4FE51EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DFA1EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */,
@@ -489,6 +498,7 @@
 				593D510B1EBAA71900BC0591 /* Camera.swift in Sources */,
 				593D4E181EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */,
+				59D300011EBFB0D100D577BD /* JitteredSampler.swift in Sources */,
 				59D3FFFE1EBFABE400D577BD /* Sampler.swift in Sources */,
 				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
 				593D510E1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
