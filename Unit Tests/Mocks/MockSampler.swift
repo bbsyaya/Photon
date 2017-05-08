@@ -1,4 +1,4 @@
-// RenderingOptions.swift
+// MockSampler.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,21 +21,18 @@
 
 import Foundation
 
-public struct RenderingOptions {
-  var width: Int
-  var height: Int
+final class MockSampler: Sampler {
+  var hadSamplesRequested: Bool = false
 
-  var camera: Camera
-  var callbackQueue: DispatchQueue
 
-  public var sampleAdditionalPoints = true
-  public var sampler: Sampler = JitteredSampler(bundleSize: 25)
+  // MARK: - Sampler
 
-  public init(width: Int, height: Int, camera: Camera? = nil, callbackQueue: DispatchQueue? = nil) {
-    self.width = width
-    self.height = height
+  var sampleBundleSize: Int = 10
 
-    self.camera = camera ?? OrthographicCamera()
-    self.callbackQueue = callbackQueue ?? DispatchQueue.main
+  func generateSampleBundle(at: Point2D) -> [Point2D] {
+    hadSamplesRequested = true
+
+    let point = Point2D.zero
+    return [Point2D](repeating: point, count: sampleBundleSize)
   }
 }
