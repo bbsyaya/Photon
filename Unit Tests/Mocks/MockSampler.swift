@@ -27,10 +27,12 @@ final class MockSampler: Sampler {
 
   // MARK: - Sampler
 
-  var sampleBundleSize: Int = 0
+  var sampleBundleSize: Int = 10
 
   func generateSampleBundle(at: Point2D) -> [Point2D] {
     hadSamplesRequested = true
-    return []
+
+    let point = Point2D.zero
+    return [Point2D](repeating: point, count: sampleBundleSize)
   }
 }
