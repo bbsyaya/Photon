@@ -61,4 +61,20 @@ final class SampleColorCollectionTests: XCTestCase {
     XCTAssertEqual(collection.averagePixelValue(), color)
   }
 
+  func testLargeColorValue() {
+    var collection = SampleColorCollection()
+    let color = PixelData(r: UInt8.max, g: UInt8.max, b: UInt8.max)
+    let maxInt = Float(UInt8.max)
+
+    collection.collect(color: color)
+    collection.collect(color: color)
+    collection.collect(color: color)
+
+    XCTAssertEqual(collection.r, maxInt * 3)
+    XCTAssertEqual(collection.g, maxInt * 3)
+    XCTAssertEqual(collection.b, maxInt * 3)
+    XCTAssertEqual(collection.samplesCollected, 3)
+    XCTAssertEqual(collection.averagePixelValue(), color)
+  }
+
 }
