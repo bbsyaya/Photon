@@ -87,7 +87,7 @@
 		593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSerializable.swift; sourceTree = "<group>"; };
 		593D4DFE1EB656AB00BC0591 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
 		593D4E001EB6907D00BC0591 /* Normal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
-		593D4E071EB6A53000BC0591 /* photon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = photon; sourceTree = BUILT_PRODUCTS_DIR; };
+		593D4E071EB6A53000BC0591 /* photon-render */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "photon-render"; sourceTree = BUILT_PRODUCTS_DIR; };
 		593D4E091EB6A53000BC0591 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		593D4E111EB6C12600BC0591 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaneTests.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			children = (
 				597773A11EAF9AB10051EF1D /* Photon.framework */,
 				597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */,
-				593D4E071EB6A53000BC0591 /* photon */,
+				593D4E071EB6A53000BC0591 /* photon-render */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,7 +336,7 @@
 			);
 			name = CLI;
 			productName = photon;
-			productReference = 593D4E071EB6A53000BC0591 /* photon */;
+			productReference = 593D4E071EB6A53000BC0591 /* photon-render */;
 			productType = "com.apple.product-type.tool";
 		};
 		597773A01EAF9AB10051EF1D /* Photon */ = {
@@ -528,7 +528,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				PRODUCT_NAME = photon;
+				PRODUCT_NAME = "photon-render";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -537,7 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				PRODUCT_NAME = photon;
+				PRODUCT_NAME = "photon-render";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "593D4E061EB6A53000BC0591"
-               BuildableName = "photon"
+               BuildableName = "photon-render"
                BlueprintName = "CLI"
                ReferencedContainer = "container:Photon.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "593D4E061EB6A53000BC0591"
-            BuildableName = "photon"
+            BuildableName = "photon-render"
             BlueprintName = "CLI"
             ReferencedContainer = "container:Photon.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "593D4E061EB6A53000BC0591"
-            BuildableName = "photon"
+            BuildableName = "photon-render"
             BlueprintName = "CLI"
             ReferencedContainer = "container:Photon.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "593D4E061EB6A53000BC0591"
-            BuildableName = "photon"
+            BuildableName = "photon-render"
             BlueprintName = "CLI"
             ReferencedContainer = "container:Photon.xcodeproj">
          </BuildableReference>
