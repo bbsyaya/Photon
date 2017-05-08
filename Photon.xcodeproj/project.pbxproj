@@ -58,6 +58,9 @@
 		59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */; };
 		59E042201EBFD92A00BA6DEC /* ClosedRangeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */; };
 		59E042211EBFDB3B00BA6DEC /* ClosedRangeExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */; };
+		59E042231EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */; };
+		59E042241EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */; };
+		59E042261EC0198900BA6DEC /* SampleColorCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +130,8 @@
 		59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSampler.swift; sourceTree = "<group>"; };
 		59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSamplerTests.swift; sourceTree = "<group>"; };
 		59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedRangeExtensions.swift; sourceTree = "<group>"; };
+		59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleColorCollection.swift; sourceTree = "<group>"; };
+		59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleColorCollectionTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +217,7 @@
 			children = (
 				593D4DF81EB64B2A00BC0591 /* Image.swift */,
 				593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */,
+				59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -279,6 +285,7 @@
 				593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */,
 				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
+				59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */,
 				593D4FE61EB8E2A300BC0591 /* SceneTests.swift */,
 				593D50221EB9899F00BC0591 /* SphereTests.swift */,
 				597773BF1EAFB47F0051EF1D /* VectorTests.swift */,
@@ -481,6 +488,7 @@
 				59E042201EBFD92A00BA6DEC /* ClosedRangeExtensions.swift in Sources */,
 				593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
 				59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */,
+				59E042231EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */,
 				593D4E171EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4DED1EB56CFE00BC0591 /* Ray.swift in Sources */,
 			);
@@ -495,6 +503,7 @@
 				593D4DF31EB56F9D00BC0591 /* PointTests.swift in Sources */,
 				59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */,
 				59E042211EBFDB3B00BA6DEC /* ClosedRangeExtensions.swift in Sources */,
+				59E042261EC0198900BA6DEC /* SampleColorCollectionTests.swift in Sources */,
 				593D4FE51EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DFA1EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DEE1EB56CFE00BC0591 /* Ray.swift in Sources */,
@@ -513,6 +522,7 @@
 				593D4E181EB6DA9B00BC0591 /* Intersection.swift in Sources */,
 				593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */,
 				59D300011EBFB0D100D577BD /* JitteredSampler.swift in Sources */,
+				59E042241EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */,
 				59D3FFFE1EBFABE400D577BD /* Sampler.swift in Sources */,
 				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
 				593D510E1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
