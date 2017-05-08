@@ -22,10 +22,10 @@
 import Foundation
 
 public struct Intersection {
-  let t: Float
-  let isHit: Bool
-  let normal: Normal
-  let intersectionPoint: Point3D
+  public let t: Float
+  public let isHit: Bool
+  public let normal: Normal
+  public let intersectionPoint: Point3D
 
   static let none = Intersection(t: 0, isHit: false, normal: Normal.zero, intersectionPoint: Point3D.zero)
 }

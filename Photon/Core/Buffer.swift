@@ -26,16 +26,16 @@ public typealias PixelCoordinate = (row: Int, column: Int)
 // MARK: -
 
 public class Buffer: Sequence {
-  let width: Int
-  let height: Int
-  var pixelData: [PixelData]
+  public let width: Int
+  public let height: Int
+  public var pixelData: [PixelData]
 
-  var size: Int {
+  public var size: Int {
     return width * height
   }
 
   /// Initializes a new Buffer with an array of pixel data containing black pixels.
-  init(width: Int, height: Int) {
+  public init(width: Int, height: Int) {
     self.width = width
     self.height = height
 
@@ -43,7 +43,7 @@ public class Buffer: Sequence {
     self.pixelData = [PixelData](repeating: pixel, count: Int(width * height))
   }
 
-  subscript(coordinate: PixelCoordinate) -> PixelData {
+  public subscript(coordinate: PixelCoordinate) -> PixelData {
     get {
       return pixelData(at: coordinate)
     }

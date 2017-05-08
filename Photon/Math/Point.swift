@@ -26,8 +26,8 @@ import Foundation
 public struct Point2D {
   public static let zero = Point2D(0, 0)
 
-  var x: Float
-  var y: Float
+  public var x: Float
+  public var y: Float
 
   public init(_ x: Float, _ y: Float) {
     self.x = x
@@ -90,9 +90,9 @@ extension Point2D: CustomStringConvertible {
 public struct Point3D {
   public static let zero = Point3D(0, 0, 0)
 
-  var x: Float
-  var y: Float
-  var z: Float
+  public var x: Float
+  public var y: Float
+  public var z: Float
 
   public init(_ x: Float, _ y: Float, _ z: Float) {
     self.x = x

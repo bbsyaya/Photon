@@ -25,7 +25,7 @@ public final class JitteredSampler: Sampler {
   private let minimum: Float = 0.0
   private let maximum: Float = 1.0
 
-  init(bundleSize: Int) {
+  public init(bundleSize: Int) {
     self.sampleBundleSize = bundleSize
   }
 

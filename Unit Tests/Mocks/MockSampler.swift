@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
+import Photon
 
 final class MockSampler: Sampler {
   var hadSamplesRequested: Bool = false

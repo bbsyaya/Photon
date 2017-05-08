@@ -22,6 +22,7 @@
 import Foundation
 import Cocoa
 import XCTest
+import Photon
 
 final class SceneTests: XCTestCase {
 

@@ -22,8 +22,8 @@
 import Foundation
 
 public final class Plane: GeometricObject {
-  let point: Point3D
-  let normal: Normal
+  public let point: Point3D
+  public let normal: Normal
 
   public init(point: Point3D, normal: Normal) {
     self.point = point

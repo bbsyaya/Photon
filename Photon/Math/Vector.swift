@@ -28,8 +28,8 @@ public struct Vector2D {
   public static let x = Vector2D(1, 0)
   public static let y = Vector2D(0, 1)
 
-  var x: Float
-  var y: Float
+  public var x: Float
+  public var y: Float
 
   public init(_ x: Float, _ y: Float) {
     self.x = x
@@ -117,9 +117,9 @@ public struct Vector3D {
   public static let y = Vector3D(0, 1, 0)
   public static let z = Vector3D(0, 0, 1)
 
-  var x: Float
-  var y: Float
-  var z: Float
+  public var x: Float
+  public var y: Float
+  public var z: Float
 
   public var lengthSquared: Float {
     return x * x + y * y + z * z

@@ -27,6 +27,7 @@ public struct SampleColorCollection {
   public private(set) var b: Float = 0.0
   public private(set) var samplesCollected: Int = 0
 
+  public init() {}
 
   // MARK: - Public Functions
 

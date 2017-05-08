@@ -21,6 +21,7 @@
 
 import Foundation
 import XCTest
+import Photon
 
 final class JitteredSamplerTests: XCTestCase {
 

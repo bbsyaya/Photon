@@ -22,7 +22,7 @@
 import Foundation
 import Cocoa
 import XCTest
-
+import Photon
 
 // MARK: - Vector2D
 

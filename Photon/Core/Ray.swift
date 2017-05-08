@@ -22,12 +22,12 @@
 import Foundation
 
 public struct Ray {
-  var origin: Point3D
-  var direction: Vector3D
+  public var origin: Point3D
+  public var direction: Vector3D
 
-  var t: Float = 0.0
+  public var t: Float
 
-  init(origin: Point3D, direction: Vector3D, t: Float = 0.0) {
+  public init(origin: Point3D, direction: Vector3D, t: Float = 0.0) {
     self.origin = origin
     self.direction = direction
     self.t = t

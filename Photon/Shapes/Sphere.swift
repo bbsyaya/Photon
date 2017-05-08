@@ -22,8 +22,8 @@
 import Foundation
 
 public final class Sphere: GeometricObject {
-  let center: Point3D
-  let radius: Float
+  public let center: Point3D
+  public let radius: Float
 
   private var radiusSquared: Float {
     return radius * radius

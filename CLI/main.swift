@@ -20,5 +20,6 @@
 // THE SOFTWARE.
 
 import Foundation
+import Photon
 
 print("Photon 1.0")
