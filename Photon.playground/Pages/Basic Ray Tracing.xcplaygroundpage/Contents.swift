@@ -20,7 +20,8 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
  perceive them, rather than the same size no matter the distance,
  which is how an orthographic camera works.
  */
-let renderingOptions = RenderingOptions(width: 600, height: 400)
+var renderingOptions = RenderingOptions(width: 600, height: 400)
+
 let scene = Scene(renderingOptions: renderingOptions)
 
 /*:

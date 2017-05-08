@@ -43,6 +43,8 @@ public final class Scene {
   private let callbackQueue: DispatchQueue
   private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: [.concurrent], target: nil)
 
+  private let renderingOptions: RenderingOptions
+
 
   // MARK: - Initialization
 
@@ -50,6 +52,7 @@ public final class Scene {
     self.pixelBuffer = Buffer(width: renderingOptions.width, height: renderingOptions.height)
     self.camera = renderingOptions.camera
     self.callbackQueue = renderingOptions.callbackQueue
+    self.renderingOptions = renderingOptions
 
     self.renderer = Renderer()
   }
@@ -87,9 +90,23 @@ public final class Scene {
   // MARK: - Private Functions
 
   @inline(__always) private func traceRayFor(x: Int, y: Int) -> PixelData {
-    let ray = camera.castRayAt(x: Float(x), y: Float(y))
-    let color = renderer.trace(ray: ray, depth: 0)
+    if renderingOptions.sampleAdditionalPoints {
+      let points = renderingOptions.sampler.generateSampleBundle(at: Point2D(Float(x), Float(y)))
+      var sampleCollection = SampleColorCollection()
 
-    return color
+      for point in points {
+        let ray = camera.castRayAt(x: point.x, y: point.y)
+        let color = renderer.trace(ray: ray, depth: 0)
+
+        sampleCollection.collect(color: color)
+      }
+
+      return sampleCollection.averagePixelValue()
+    } else {
+      let ray = camera.castRayAt(x: Float(x), y: Float(y))
+      let color = renderer.trace(ray: ray, depth: 0)
+
+      return color
+    }
   }
 }

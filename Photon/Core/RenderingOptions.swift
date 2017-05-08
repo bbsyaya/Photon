@@ -28,8 +28,8 @@ public struct RenderingOptions {
   var camera: Camera
   var callbackQueue: DispatchQueue
 
-  var sampleAdditionalPoints = true
-  var sampler = JitteredSampler(bundleSize: 25)
+  public var sampleAdditionalPoints = true
+  public var sampler = JitteredSampler(bundleSize: 25)
 
   public init(width: Int, height: Int, camera: Camera? = nil, callbackQueue: DispatchQueue? = nil) {
     self.width = width
