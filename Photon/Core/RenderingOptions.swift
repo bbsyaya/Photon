@@ -24,6 +24,14 @@ import Foundation
 public struct RenderingOptions {
   let width: Int
   let height: Int
-  let camera: Camera = OrthographicCamera()
-  let callbackQueue: DispatchQueue = DispatchQueue.main
+  let camera: Camera
+  let callbackQueue: DispatchQueue
+
+  public init(width: Int, height: Int, camera: Camera? = nil, callbackQueue: DispatchQueue? = nil) {
+    self.width = width
+    self.height = height
+
+    self.camera = camera ?? OrthographicCamera()
+    self.callbackQueue = callbackQueue ?? DispatchQueue.main
+  }
 }

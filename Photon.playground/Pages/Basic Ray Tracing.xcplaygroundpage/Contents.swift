@@ -20,16 +20,15 @@ XCPlaygroundPage.currentPage.needsIndefiniteExecution = true
  perceive them, rather than the same size no matter the distance,
  which is how an orthographic camera works.
  */
-
-let scene = Scene(width: 600, height: 400, camera: OrthographicCamera())
+let renderingOptions = RenderingOptions(width: 600, height: 400)
+let scene = Scene(renderingOptions: renderingOptions)
 
 /*:
  Once you have a `Scene` object, you can add objects to it. Here,
  a `Sphere` is created and added to the scene, with its center as
  the middle of the scene.
  */
-
-let sphereObject =  Sphere(center: Point3D(600 / 2, 400 / 2, -100), radius: 150)
+let sphereObject = Sphere(center: Point3D(600 / 2, 400 / 2, -100), radius: 150)
 scene.add(object: sphereObject)
 
 /*:
@@ -39,7 +38,6 @@ scene.add(object: sphereObject)
  rendering process, so here we will forcefully unwrap the image
  and hope for the best.
  */
-
 scene.renderScene { image in
   let unwrappedImage = image!
 }
