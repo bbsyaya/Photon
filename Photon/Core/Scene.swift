@@ -72,9 +72,7 @@ public final class Scene {
 
     for row in 0 ..< height {
       for column in 0 ..< width {
-        let ray = camera.castRayAt(x: Float(column), y: Float(row))
-        let color = renderer.trace(ray: ray, depth: 0)
-        pixelBuffer[(row, column)] = color
+        pixelBuffer[(row, column)] = traceRayFor(x: column, y: row)
       }
     }
 
@@ -83,5 +81,15 @@ public final class Scene {
     callbackQueue.async {
       sceneCompletion(image)
     }
+  }
+
+
+  // MARK: - Private Functions
+
+  @inline(__always) private func traceRayFor(x: Int, y: Int) -> PixelData {
+    let ray = camera.castRayAt(x: Float(x), y: Float(y))
+    let color = renderer.trace(ray: ray, depth: 0)
+
+    return color
   }
 }

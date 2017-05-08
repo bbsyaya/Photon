@@ -22,10 +22,14 @@
 import Foundation
 
 public struct RenderingOptions {
-  let width: Int
-  let height: Int
-  let camera: Camera
-  let callbackQueue: DispatchQueue
+  var width: Int
+  var height: Int
+
+  var camera: Camera
+  var callbackQueue: DispatchQueue
+
+  var sampleAdditionalPoints = true
+  var sampler = JitteredSampler(bundleSize: 25)
 
   public init(width: Int, height: Int, camera: Camera? = nil, callbackQueue: DispatchQueue? = nil) {
     self.width = width
