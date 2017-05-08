@@ -57,14 +57,25 @@ extension NSImage {
 
 var renderingOptions = RenderingOptions(width: 600, height: 400)
 let scene = Scene(renderingOptions: renderingOptions)
-let sphereObject = Sphere(center: Point3D(600 / 2, 400 / 2, -100), radius: 150)
 let path = getPath(fileName: "TestRender.png")
 
-scene.add(object: sphereObject)
+scene.add(object: Sphere(center: Point3D(150, 400 / 2, -100), radius: 100))
+scene.add(object: Sphere(center: Point3D(450, 400 / 2, -100), radius: 100))
+
+let startTime = mach_absolute_time()
 
 scene.renderScene { image in
   let unwrappedImage = image!
   unwrappedImage.saveAsPNG(url: URL(fileURLWithPath: path))
+
+  let finishTime = mach_absolute_time()
+
+  let elapsed = finishTime - startTime
+  var timeBaseInfo = mach_timebase_info_data_t()
+  mach_timebase_info(&timeBaseInfo)
+
+  let nanoseconds = elapsed * UInt64(timeBaseInfo.numer) / UInt64(timeBaseInfo.denom);
+  print("Rendering complete after \(Double(nanoseconds) / 1_000_000_000) seconds")
 
   exit(0)
 }
