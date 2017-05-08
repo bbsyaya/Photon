@@ -46,10 +46,10 @@ public final class Scene {
 
   // MARK: - Initialization
 
-  public init(width: Int, height: Int, camera: Camera, callbackQueue: DispatchQueue = DispatchQueue.main) {
-    self.pixelBuffer = Buffer(width: width, height: height)
-    self.camera = camera
-    self.callbackQueue = callbackQueue
+  public init(renderingOptions: RenderingOptions) {
+    self.pixelBuffer = Buffer(width: renderingOptions.width, height: renderingOptions.height)
+    self.camera = renderingOptions.camera
+    self.callbackQueue = renderingOptions.callbackQueue
 
     self.renderer = Renderer()
   }

@@ -61,6 +61,8 @@
 		59E042231EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */; };
 		59E042241EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */; };
 		59E042261EC0198900BA6DEC /* SampleColorCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */; };
+		59E042281EC01BD900BA6DEC /* RenderingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042271EC01BD900BA6DEC /* RenderingOptions.swift */; };
+		59E042291EC01BD900BA6DEC /* RenderingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042271EC01BD900BA6DEC /* RenderingOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +134,7 @@
 		59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClosedRangeExtensions.swift; sourceTree = "<group>"; };
 		59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleColorCollection.swift; sourceTree = "<group>"; };
 		59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleColorCollectionTests.swift; sourceTree = "<group>"; };
+		59E042271EC01BD900BA6DEC /* RenderingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderingOptions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,10 +206,11 @@
 		593D4DEB1EB56CDC00BC0591 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				593D50191EB9705800BC0591 /* Renderer.swift */,
 				593D4FE81EB8F1E000BC0591 /* Buffer.swift */,
 				593D4E161EB6DA9B00BC0591 /* Intersection.swift */,
 				593D4DEC1EB56CFE00BC0591 /* Ray.swift */,
+				593D50191EB9705800BC0591 /* Renderer.swift */,
+				59E042271EC01BD900BA6DEC /* RenderingOptions.swift */,
 				593D4DF51EB6471700BC0591 /* Scene.swift */,
 			);
 			path = Core;
@@ -479,6 +483,7 @@
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D510D1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
 				593D501A1EB9705800BC0591 /* Renderer.swift in Sources */,
+				59E042281EC01BD900BA6DEC /* RenderingOptions.swift in Sources */,
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DF61EB6471700BC0591 /* Scene.swift in Sources */,
 				597773BD1EAFB1750051EF1D /* Vector.swift in Sources */,
@@ -515,6 +520,7 @@
 				597773BE1EAFB1750051EF1D /* Vector.swift in Sources */,
 				593D4DF71EB6471700BC0591 /* Scene.swift in Sources */,
 				597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */,
+				59E042291EC01BD900BA6DEC /* RenderingOptions.swift in Sources */,
 				593D50211EB97FBE00BC0591 /* Sphere.swift in Sources */,
 				593D4E151EB6C1BB00BC0591 /* PlaneTests.swift in Sources */,
 				593D4E131EB6C12600BC0591 /* Plane.swift in Sources */,
