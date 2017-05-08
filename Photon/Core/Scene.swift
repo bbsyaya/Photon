@@ -90,23 +90,23 @@ public final class Scene {
   // MARK: - Private Functions
 
   @inline(__always) private func traceRayFor(x: Int, y: Int) -> PixelData {
-    if renderingOptions.sampleAdditionalPoints {
-      let points = renderingOptions.sampler.generateSampleBundle(at: Point2D(Float(x), Float(y)))
-      var sampleCollection = SampleColorCollection()
-
-      for point in points {
-        let ray = camera.castRayAt(x: point.x, y: point.y)
-        let color = renderer.trace(ray: ray, depth: 0)
-
-        sampleCollection.collect(color: color)
-      }
-
-      return sampleCollection.averagePixelValue()
-    } else {
+    guard renderingOptions.sampleAdditionalPoints else {
       let ray = camera.castRayAt(x: Float(x), y: Float(y))
       let color = renderer.trace(ray: ray, depth: 0)
 
       return color
     }
+
+    let points = renderingOptions.sampler.generateSampleBundle(at: Point2D(Float(x), Float(y)))
+    var sampleCollection = SampleColorCollection()
+
+    for point in points {
+      let ray = camera.castRayAt(x: point.x, y: point.y)
+      let color = renderer.trace(ray: ray, depth: 0)
+
+      sampleCollection.collect(color: color)
+    }
+
+    return sampleCollection.averagePixelValue()
   }
 }
