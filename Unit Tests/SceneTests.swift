@@ -65,4 +65,25 @@ final class SceneTests: XCTestCase {
     }
   }
 
+  func testDisablingAdditionalSampling() {
+    let sampler = MockSampler()
+
+    var options = RenderingOptions(width: 1, height: 1)
+    options.sampleAdditionalPoints = false
+    options.sampler = sampler
+
+    let scene = Scene(renderingOptions: options)
+    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
+
+    let expectation = self.expectation(description: "A scene with objects should render an image")
+
+    scene.renderScene { returnedImage in
+      expectation.fulfill()
+    }
+
+    waitForExpectations(timeout: 1.0) { error in
+      XCTAssertFalse(sampler.hadSamplesRequested)
+    }
+  }
+
 }

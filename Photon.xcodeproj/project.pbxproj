@@ -63,6 +63,7 @@
 		59E042261EC0198900BA6DEC /* SampleColorCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */; };
 		59E042281EC01BD900BA6DEC /* RenderingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042271EC01BD900BA6DEC /* RenderingOptions.swift */; };
 		59E042291EC01BD900BA6DEC /* RenderingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E042271EC01BD900BA6DEC /* RenderingOptions.swift */; };
+		59E0422C1EC0BB7300BA6DEC /* MockSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0422B1EC0BB7300BA6DEC /* MockSampler.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +136,7 @@
 		59E042221EBFF27700BA6DEC /* SampleColorCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleColorCollection.swift; sourceTree = "<group>"; };
 		59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SampleColorCollectionTests.swift; sourceTree = "<group>"; };
 		59E042271EC01BD900BA6DEC /* RenderingOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderingOptions.swift; sourceTree = "<group>"; };
+		59E0422B1EC0BB7300BA6DEC /* MockSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSampler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 		597773B11EAFA0BB0051EF1D /* Unit Tests */ = {
 			isa = PBXGroup;
 			children = (
+				59E0422A1EC0BB4D00BA6DEC /* Mocks */,
 				593D4FEB1EB8F30700BC0591 /* BufferTests.swift */,
 				593D4DFE1EB656AB00BC0591 /* ImageTests.swift */,
 				59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */,
@@ -314,6 +317,14 @@
 				59E0421F1EBFD92A00BA6DEC /* ClosedRangeExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		59E0422A1EC0BB4D00BA6DEC /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				59E0422B1EC0BB7300BA6DEC /* MockSampler.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +542,7 @@
 				59E042241EBFF27700BA6DEC /* SampleColorCollection.swift in Sources */,
 				59D3FFFE1EBFABE400D577BD /* Sampler.swift in Sources */,
 				593D4E021EB6907D00BC0591 /* Normal.swift in Sources */,
+				59E0422C1EC0BB7300BA6DEC /* MockSampler.swift in Sources */,
 				593D510E1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
 				593D4FE71EB8E2A300BC0591 /* SceneTests.swift in Sources */,
 			);
