@@ -32,6 +32,11 @@ Features implemented and planned for Photon:
 * [ ] Reflections
 * [ ] Transparency
 
+#### Cameras
+
+* [x] Orthogonal
+* [ ] Perspective
+
 #### Miscellaneous
 
 * [ ] Proper lighting
