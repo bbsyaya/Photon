@@ -1,4 +1,4 @@
-// Sphere.swift
+// Material.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,52 +21,8 @@
 
 import Foundation
 
-public final class Sphere: GeometricObject {
-  public let center: Point3D
-  public let radius: Float
+public struct Material {
+  public let color: PixelData
 
-  public var material: Material
-
-  private var radiusSquared: Float {
-    return radius * radius
-  }
-
-  public init(center: Point3D, radius: Float, material: Material) {
-    self.center = center
-    self.radius = radius
-    self.material = material
-  }
-
-
-  // MARK: - Geometric Object
-
-  public func intersection(with ray: Ray) -> Intersection {
-    let vector = Vector3D(point: center - ray.origin)
-    let tca = vector.dot(ray.direction)
-    let d2 = vector.dot(vector) - tca * tca
-
-    if d2 > radiusSquared {
-      return Intersection.none
-    }
-
-    let thc = sqrt(radiusSquared - d2)
-    var t0 = tca - thc
-    var t1 = tca + thc
-
-    if t0 > t1 {
-      swap(&t0, &t1)
-    }
-
-    if t0 < 0 {
-      t0 = t1
-      if t0 < 0 {
-        return Intersection.none
-      }
-    }
-
-    let t = t0
-    let hitPoint = ray.origin + (ray.direction * t)
-
-    return Intersection(t: t, isHit: true, normal: Normal(point: hitPoint - center).normalized(), intersectionPoint: hitPoint)
-  }
+  public static let blueMaterial = Material(color: PixelData(r: 0, g: 0, b: 255))
 }

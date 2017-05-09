@@ -22,5 +22,6 @@
 import Foundation
 
 public protocol GeometricObject {
+  var material: Material { get set }
   func intersection(with ray: Ray) -> Intersection
 }

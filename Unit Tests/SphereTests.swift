@@ -27,13 +27,13 @@ import Photon
 final class SphereTests: XCTestCase {
 
   func testInitialization() {
-    let sphere = Sphere(center: Point3D(1, 2, 3), radius: 10)
+    let sphere = Sphere(center: Point3D(1, 2, 3), radius: 10, material: Material.blueMaterial)
     XCTAssertEqual(sphere.center, Point3D(1, 2, 3))
     XCTAssertEqual(sphere.radius, 10)
   }
 
   func testNoIntersection() {
-    let sphere = Sphere(center: Point3D.zero, radius: 10)
+    let sphere = Sphere(center: Point3D.zero, radius: 10, material: Material.blueMaterial)
     let ray = Ray(origin: Point3D(0, 11, 0), direction: Vector3D(0, 1, 0))
     let intersection = sphere.intersection(with: ray)
 
@@ -42,7 +42,7 @@ final class SphereTests: XCTestCase {
 
   func testValidIntersections() {
     do {
-      let sphere = Sphere(center: Point3D.zero, radius: 5)
+      let sphere = Sphere(center: Point3D.zero, radius: 5, material: Material.blueMaterial)
       let ray = Ray(origin: Point3D(0, 10, 0), direction: Vector3D(0, -1, 0))
       let intersection = sphere.intersection(with: ray)
 
@@ -52,7 +52,7 @@ final class SphereTests: XCTestCase {
     }
 
     do {
-      let sphere = Sphere(center: Point3D.zero, radius: 5)
+      let sphere = Sphere(center: Point3D.zero, radius: 5, material: Material.blueMaterial)
       let ray = Ray(origin: Point3D(2.5, 10, 0), direction: Vector3D(0, -1, 0))
       let intersection = sphere.intersection(with: ray)
 

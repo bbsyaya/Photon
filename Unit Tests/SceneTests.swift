@@ -49,7 +49,7 @@ final class SceneTests: XCTestCase {
   func testRenderingWithOneObject() {
     let scene = Scene(renderingOptions: RenderingOptions(width: 3, height: 6))
 
-    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
+    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1), material: Material.blueMaterial))
 
     let expectation = self.expectation(description: "A scene with objects should render an image")
     var image: NSImage? = nil
@@ -74,7 +74,7 @@ final class SceneTests: XCTestCase {
     options.sampler = sampler
 
     let scene = Scene(renderingOptions: options)
-    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
+    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1), material: Material.blueMaterial))
 
     let expectation = self.expectation(description: "A scene with objects should render an image")
 
@@ -95,7 +95,7 @@ final class SceneTests: XCTestCase {
     options.sampler = sampler
 
     let scene = Scene(renderingOptions: options)
-    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1)))
+    scene.add(object: Plane(point: Point3D.zero, normal: Normal(0, 0, -1), material: Material.blueMaterial))
 
     let expectation = self.expectation(description: "A scene with objects should render an image")
 

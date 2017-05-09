@@ -27,20 +27,20 @@ import Photon
 final class PlaneTests: XCTestCase {
 
   func testInitialization() {
-    let plane = Plane(point: Point3D(1, 2, 3), normal: Normal(0, 1, 0))
+    let plane = Plane(point: Point3D(1, 2, 3), normal: Normal(0, 1, 0), material: Material.blueMaterial)
     XCTAssertEqual(plane.point, Point3D(1, 2, 3))
     XCTAssertEqual(plane.normal, Normal(0, 1, 0))
   }
 
   func testPointTesting() {
-    let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+    let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0), material: Material.blueMaterial)
 
     XCTAssertTrue(plane.contains(point: Point3D(30, 0, 20)))
     XCTAssertFalse(plane.contains(point: Point3D(30, 1, 20)))
   }
 
   func testNoIntersection() {
-    let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+    let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0), material: Material.blueMaterial)
     let ray = Ray(origin: Point3D(0, 1, 0), direction: Vector3D(0, 1, 0))
     let intersection = plane.intersection(with: ray)
 
@@ -49,7 +49,7 @@ final class PlaneTests: XCTestCase {
 
   func testValidIntersections() {
     do {
-      let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+      let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0), material: Material.blueMaterial)
       let ray = Ray(origin: Point3D(0, 5, 0), direction: Vector3D(0, -1, 0))
       let intersection = plane.intersection(with: ray)
 
@@ -59,7 +59,7 @@ final class PlaneTests: XCTestCase {
     }
 
     do {
-      let plane = Plane(point: Point3D(0, 2, 0), normal: Normal(0, 1, 0))
+      let plane = Plane(point: Point3D(0, 2, 0), normal: Normal(0, 1, 0), material: Material.blueMaterial)
       let ray = Ray(origin: Point3D(0, 5, 0), direction: Vector3D(0, -1, 0))
       let intersection = plane.intersection(with: ray)
 
@@ -69,7 +69,7 @@ final class PlaneTests: XCTestCase {
     }
 
     do {
-      let plane = Plane(point: Point3D(0, 10, 0), normal: Normal(0, -1, 0))
+      let plane = Plane(point: Point3D(0, 10, 0), normal: Normal(0, -1, 0), material: Material.blueMaterial)
       let ray = Ray(origin: Point3D(0, -2, 0), direction: Vector3D(0, 1, 0))
       let intersection = plane.intersection(with: ray)
 
@@ -79,7 +79,7 @@ final class PlaneTests: XCTestCase {
     }
 
     do {
-      let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0))
+      let plane = Plane(point: Point3D.zero, normal: Normal(0, 1, 0), material: Material.blueMaterial)
       let ray = Ray(origin: Point3D(0, 10, 0), direction: Vector3D(1.5, -1, -1))
       let intersection = plane.intersection(with: ray)
 

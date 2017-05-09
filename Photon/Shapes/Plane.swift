@@ -25,9 +25,12 @@ public final class Plane: GeometricObject {
   public let point: Point3D
   public let normal: Normal
 
-  public init(point: Point3D, normal: Normal) {
+  public var material: Material
+
+  public init(point: Point3D, normal: Normal, material: Material) {
     self.point = point
     self.normal = normal.normalized()
+    self.material = material
   }
 
 

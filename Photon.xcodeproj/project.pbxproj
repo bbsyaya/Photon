@@ -33,6 +33,7 @@
 		593D510A1EBAA71900BC0591 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D51091EBAA71900BC0591 /* Camera.swift */; };
 		593D510D1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */; };
 		593D51101EBAAB3500BC0591 /* OrthographicCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */; };
+		5950A4201EC159EA005BB879 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950A41F1EC159EA005BB879 /* Material.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		597773BD1EAFB1750051EF1D /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BC1EAFB1750051EF1D /* Vector.swift */; };
 		597773C01EAFB47F0051EF1D /* VectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597773BF1EAFB47F0051EF1D /* VectorTests.swift */; };
@@ -102,6 +103,7 @@
 		593D51091EBAA71900BC0591 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		593D510C1EBAAA6A00BC0591 /* OrthographicCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthographicCamera.swift; sourceTree = "<group>"; };
 		593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrthographicCameraTests.swift; sourceTree = "<group>"; };
+		5950A41F1EC159EA005BB879 /* Material.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Material.swift; sourceTree = "<group>"; };
 		597773A11EAF9AB10051EF1D /* Photon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Photon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773A41EAF9AB10051EF1D /* Photon.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Photon.h; path = ../Photon.h; sourceTree = "<group>"; };
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		593D4DEA1EB56CD700BC0591 /* Materials */ = {
 			isa = PBXGroup;
 			children = (
+				5950A41F1EC159EA005BB879 /* Material.swift */,
 			);
 			path = Materials;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,
 				593D510D1EBAAA6A00BC0591 /* OrthographicCamera.swift in Sources */,
 				593D501A1EB9705800BC0591 /* Renderer.swift in Sources */,
+				5950A4201EC159EA005BB879 /* Material.swift in Sources */,
 				59E042281EC01BD900BA6DEC /* RenderingOptions.swift in Sources */,
 				593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */,
 				593D4DF61EB6471700BC0591 /* Scene.swift in Sources */,
