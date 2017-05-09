@@ -67,6 +67,6 @@ public final class Sphere: GeometricObject {
     let t = t0
     let hitPoint = ray.origin + (ray.direction * t)
 
-    return Intersection(t: t, isHit: true, normal: Normal(point: hitPoint - center).normalized(), intersectionPoint: hitPoint)
+    return Intersection(t: t, isHit: true, normal: Normal(point: hitPoint - center).normalized(), material: material, intersectionPoint: hitPoint)
   }
 }

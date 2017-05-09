@@ -30,7 +30,7 @@ public final class Renderer {
     for object in geometricObjects {
       let intersection = object.intersection(with: ray)
       if intersection.isHit {
-        return PixelData.init(r: 255, g: 0, b: 0)
+        return intersection.material.color
       }
     }
 

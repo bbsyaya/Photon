@@ -50,7 +50,7 @@ public final class Plane: GeometricObject {
       let t = vectorInsidePlane.dot(normal) / denominator
       let hit = (t >= 0)
 
-      return Intersection(t: t, isHit: hit, normal: normal, intersectionPoint: ray.origin + (ray.direction * t))
+      return Intersection(t: t, isHit: hit, normal: normal, material: material, intersectionPoint: ray.origin + (ray.direction * t))
     }
 
     return Intersection.none

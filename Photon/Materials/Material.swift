@@ -24,5 +24,6 @@ import Foundation
 public struct Material {
   public let color: PixelData
 
+  public static let blackMaterial = Material(color: PixelData(r: 0, g: 0, b: 0))
   public static let blueMaterial = Material(color: PixelData(r: 0, g: 0, b: 255))
 }

@@ -34,14 +34,14 @@ func getPath(fileName: String) -> String {
 extension NSImage {
   @discardableResult func saveAsPNG(url: URL) -> Bool {
     guard let tiffData = self.tiffRepresentation else {
-      print("failed to get tiffRepresentation. url: \(url)")
+      print("Failed to get tiffRepresentation. url: \(url)")
       return false
     }
 
     let imageRep = NSBitmapImageRep(data: tiffData)
 
     guard let imageData = imageRep?.representation(using: .PNG, properties: [:]) else {
-      print("failed to get PNG representation. url: \(url)")
+      print("Failed to get PNG representation. url: \(url)")
       return false
     }
 
@@ -59,8 +59,8 @@ var renderingOptions = RenderingOptions(width: 600, height: 400)
 let scene = Scene(renderingOptions: renderingOptions)
 let path = getPath(fileName: "TestRender.png")
 
-scene.add(object: Sphere(center: Point3D(150, 400 / 2, -100), radius: 100))
-scene.add(object: Sphere(center: Point3D(450, 400 / 2, -100), radius: 100))
+scene.add(object: Sphere(center: Point3D(175, 400 / 2, -150), radius: 125, material: Material.blueMaterial))
+scene.add(object: Sphere(center: Point3D(425, 400 / 2, -150), radius: 125, material: Material.blueMaterial))
 
 let startTime = mach_absolute_time()
 
