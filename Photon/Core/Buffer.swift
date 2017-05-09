@@ -39,7 +39,7 @@ public class Buffer: Sequence {
     self.width = width
     self.height = height
 
-    let pixel = PixelData(r: 0, g: 0, b: 0)
+    let pixel = PixelData(r: 0, g: 255, b: 0)
     self.pixelData = [PixelData](repeating: pixel, count: Int(width * height))
   }
 

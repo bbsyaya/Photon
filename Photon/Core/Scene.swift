@@ -41,7 +41,9 @@ public final class Scene {
   private let camera: Camera
   private let renderer: Renderer
   private let callbackQueue: DispatchQueue
-  private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: [.concurrent], target: nil)
+  private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: .concurrent, target: nil)
+  private let writeQueue = DispatchQueue(label: "com.photon.image-writing", qos: .userInitiated, attributes: [], target: nil)
+  private let renderGroup = DispatchGroup()
 
   private let renderingOptions: RenderingOptions
 
@@ -75,13 +77,18 @@ public final class Scene {
 
     for row in 0 ..< height {
       for column in 0 ..< width {
-        pixelBuffer[(row, column)] = traceRayFor(x: column, y: row)
+        renderQueue.async(group: renderGroup) {
+          let pixelValue = self.traceRayFor(x: column, y: row)
+
+          self.writeQueue.async(group: self.renderGroup) {
+            self.pixelBuffer[(row, column)] = pixelValue
+          }
+        }
       }
     }
 
-    let image = Image.image(from: pixelBuffer.pixelData, width: width, height: height)
-
-    callbackQueue.async {
+    renderGroup.notify(queue: callbackQueue) {
+      let image = Image.image(from: self.pixelBuffer.pixelData, width: self.width, height: self.height)
       sceneCompletion(image)
     }
   }
