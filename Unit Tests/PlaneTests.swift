@@ -23,6 +23,7 @@ import Foundation
 import Cocoa
 import XCTest
 import Photon
+import simd
 
 final class PlaneTests: XCTestCase {
 

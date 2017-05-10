@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
+import simd
 
 public final class Sphere: GeometricObject {
   public let center: Point3D
@@ -42,8 +43,8 @@ public final class Sphere: GeometricObject {
 
   public func intersection(with ray: Ray) -> Intersection {
     let vector = Vector3D(point: center - ray.origin)
-    let tca = vector.dot(ray.direction)
-    let d2 = vector.dot(vector) - tca * tca
+    let tca = dot(vector, ray.direction)
+    let d2 = dot(vector, vector) - tca * tca
 
     if d2 > radiusSquared {
       return Intersection.none
@@ -67,6 +68,6 @@ public final class Sphere: GeometricObject {
     let t = t0
     let hitPoint = ray.origin + (ray.direction * t)
 
-    return Intersection(t: t, isHit: true, normal: Normal(point: hitPoint - center).normalized(), material: material, intersectionPoint: hitPoint)
+    return Intersection(t: t, isHit: true, normal: normalize(Normal(point: hitPoint - center)), material: material, intersectionPoint: hitPoint)
   }
 }

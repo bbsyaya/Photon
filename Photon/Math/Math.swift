@@ -1,4 +1,4 @@
-// Ray.swift
+// TypeNames.swift
 // Copyright (c) 2017 Sam Symons
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,15 +22,15 @@
 import Foundation
 import simd
 
-public struct Ray {
-  public var origin: Point3D
-  public var direction: Vector3D
+public typealias Vector3D = float3
+public typealias Normal = float3
 
-  public var t: Float
+extension float3: Equatable {
+  init(point: Point3D) {
+    self.init(point.x, point.y, point.z)
+  }
 
-  public init(origin: Point3D, direction: Vector3D, t: Float = 0.0) {
-    self.origin = origin
-    self.direction = direction
-    self.t = t
+  public static func == (lhs: float3, rhs: float3) -> Bool {
+    return lhs.x == rhs.x && lhs.y == rhs.y && lhs.z == rhs.z
   }
 }
