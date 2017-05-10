@@ -26,7 +26,7 @@ public typealias Vector3D = float3
 public typealias Normal = float3
 
 extension float3: Equatable {
-  init(point: Point3D) {
+  public init(point: Point3D) {
     self.init(point.x, point.y, point.z)
   }
 
