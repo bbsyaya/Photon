@@ -25,17 +25,20 @@ public struct RenderingOptions {
   var width: Int
   var height: Int
 
-  var camera: Camera
-  var callbackQueue: DispatchQueue
+  public var camera: Camera
+  public var callbackQueue: DispatchQueue
 
   public var sampleAdditionalPoints = true
   public var sampler: Sampler = JitteredSampler(bundleSize: 50)
 
-  public init(width: Int, height: Int, camera: Camera? = nil, callbackQueue: DispatchQueue? = nil) {
+  public let renderStatistics: RenderStatistics?
+
+  public init(width: Int, height: Int, camera: Camera? = nil, statistics: RenderStatistics? = nil, callbackQueue: DispatchQueue? = nil) {
     self.width = width
     self.height = height
 
     self.camera = camera ?? OrthographicCamera()
+    self.renderStatistics = statistics
     self.callbackQueue = callbackQueue ?? DispatchQueue.main
   }
 }

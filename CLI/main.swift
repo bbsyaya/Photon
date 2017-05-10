@@ -55,7 +55,8 @@ extension NSImage {
   }
 }
 
-var renderingOptions = RenderingOptions(width: 600, height: 400)
+let statistics = RenderStatistics()
+var renderingOptions = RenderingOptions(width: 600, height: 400, statistics: statistics)
 let scene = Scene(renderingOptions: renderingOptions)
 let path = getPath(fileName: "TestRender.png")
 

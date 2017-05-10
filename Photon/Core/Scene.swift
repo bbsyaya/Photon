@@ -36,6 +36,8 @@ public final class Scene {
     return pixelBuffer.height
   }
 
+  let renderingOptions: RenderingOptions
+
   private var geometricObjects: [GeometricObject] = []
   private let pixelBuffer: Buffer
   private let camera: Camera
@@ -44,8 +46,6 @@ public final class Scene {
   private let renderQueue = DispatchQueue(label: "com.photon.image-rendering", qos: .userInitiated, attributes: .concurrent, target: nil)
   private let writeQueue = DispatchQueue(label: "com.photon.image-writing", qos: .userInitiated, attributes: [], target: nil)
   private let renderGroup = DispatchGroup()
-
-  private let renderingOptions: RenderingOptions
 
 
   // MARK: - Initialization
@@ -75,8 +75,12 @@ public final class Scene {
   public func renderScene(_ sceneCompletion: @escaping SceneRenderingCompletion) {
     guard objects.count > 0 else { sceneCompletion(nil); return }
 
+    renderingOptions.renderStatistics?.startRendering()
+
     for row in 0 ..< height {
       for column in 0 ..< width {
+        renderingOptions.renderStatistics?.incrementPixelCounter()
+
         renderQueue.async(group: renderGroup) {
           let pixelValue = self.traceRayFor(x: column, y: row)
 
@@ -86,6 +90,8 @@ public final class Scene {
         }
       }
     }
+
+    renderingOptions.renderStatistics?.completeRendering()
 
     renderGroup.notify(queue: callbackQueue) {
       let image = Image.image(from: self.pixelBuffer.pixelData, width: self.width, height: self.height)
