@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
+import simd
 
 public struct Intersection {
   public let t: Float
@@ -28,5 +29,5 @@ public struct Intersection {
   public let material: Material
   public let intersectionPoint: Point3D
 
-  static let none = Intersection(t: 0, isHit: false, normal: Normal.zero, material: Material.blackMaterial, intersectionPoint: Point3D.zero)
+  static let none = Intersection(t: 0, isHit: false, normal: Normal(), material: Material.blackMaterial, intersectionPoint: Point3D.zero)
 }

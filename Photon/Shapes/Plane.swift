@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
+import simd
 
 public final class Plane: GeometricObject {
   public let point: Point3D
@@ -29,7 +30,7 @@ public final class Plane: GeometricObject {
 
   public init(point: Point3D, normal: Normal, material: Material) {
     self.point = point
-    self.normal = normal.normalized()
+    self.normal = normalize(normal)
     self.material = material
   }
 
@@ -37,17 +38,17 @@ public final class Plane: GeometricObject {
   // MARK: - Public Functions
 
   @inline(__always) public func contains(point foreignPoint: Point3D) -> Bool {
-    return Vector3D(point: foreignPoint - point).dot(normal) == 0
+    return dot(Vector3D(point: foreignPoint - point), normal) == 0
   }
 
   // MARK: - Geometric Object
 
   public func intersection(with ray: Ray) -> Intersection {
-    let denominator = ray.direction.dot(Vector3D(normal: normal))
+    let denominator = dot(ray.direction, normal)
 
     if abs(denominator) > 1e-6 {
       let vectorInsidePlane = Vector3D(point: point - ray.origin)
-      let t = vectorInsidePlane.dot(normal) / denominator
+      let t = dot(vectorInsidePlane, normal) / denominator
       let hit = (t >= 0)
 
       return Intersection(t: t, isHit: hit, normal: normal, material: material, intersectionPoint: ray.origin + (ray.direction * t))

@@ -17,7 +17,6 @@
 		593D4DF91EB64B2A00BC0591 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DF81EB64B2A00BC0591 /* Image.swift */; };
 		593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */; };
 		593D4DFF1EB656AB00BC0591 /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4DFE1EB656AB00BC0591 /* ImageTests.swift */; };
-		593D4E011EB6907D00BC0591 /* Normal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E001EB6907D00BC0591 /* Normal.swift */; };
 		593D4E0A1EB6A53000BC0591 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E091EB6A53000BC0591 /* main.swift */; };
 		593D4E101EB6A65800BC0591 /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		593D4E121EB6C12600BC0591 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D4E111EB6C12600BC0591 /* Plane.swift */; };
@@ -35,6 +34,7 @@
 		593D51101EBAAB3500BC0591 /* OrthographicCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */; };
 		5950A4201EC159EA005BB879 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950A41F1EC159EA005BB879 /* Material.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
+		599175761EC2A70100FD0438 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599175751EC2A70100FD0438 /* Math.swift */; };
 		59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */; };
 		59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFC1EBFABE400D577BD /* Sampler.swift */; };
 		59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */; };
@@ -85,7 +85,6 @@
 		593D4DF81EB64B2A00BC0591 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		593D4DFB1EB64B5F00BC0591 /* ImageSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSerializable.swift; sourceTree = "<group>"; };
 		593D4DFE1EB656AB00BC0591 /* ImageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
-		593D4E001EB6907D00BC0591 /* Normal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Normal.swift; sourceTree = "<group>"; };
 		593D4E071EB6A53000BC0591 /* photon-render */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "photon-render"; sourceTree = BUILT_PRODUCTS_DIR; };
 		593D4E091EB6A53000BC0591 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		593D4E111EB6C12600BC0591 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
@@ -107,6 +106,7 @@
 		597773A51EAF9AB10051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773B41EAFA0BB0051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		599175751EC2A70100FD0438 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
 		59D3FFFC1EBFABE400D577BD /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSampler.swift; sourceTree = "<group>"; };
 		59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSamplerTests.swift; sourceTree = "<group>"; };
@@ -282,8 +282,8 @@
 		597773BB1EAFA7120051EF1D /* Math */ = {
 			isa = PBXGroup;
 			children = (
+				599175751EC2A70100FD0438 /* Math.swift */,
 				593D4DEF1EB56E6F00BC0591 /* Point.swift */,
-				593D4E001EB6907D00BC0591 /* Normal.swift */,
 			);
 			path = Math;
 			sourceTree = "<group>";
@@ -465,7 +465,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				593D50201EB97FBE00BC0591 /* Sphere.swift in Sources */,
-				593D4E011EB6907D00BC0591 /* Normal.swift in Sources */,
+				599175761EC2A70100FD0438 /* Math.swift in Sources */,
 				593D4E121EB6C12600BC0591 /* Plane.swift in Sources */,
 				593D4FE41EB8DEEF00BC0591 /* GeometricObject.swift in Sources */,
 				593D4DF01EB56E6F00BC0591 /* Point.swift in Sources */,

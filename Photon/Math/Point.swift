@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 import Foundation
+import simd
 
 // MARK: - Point2D
 
@@ -111,7 +112,7 @@ extension Point3D: Equatable {
     return Point3D(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
   }
 
-  public static func + (lhs: Point3D, rhs: Vector3D) -> Point3D {
+  public static func + (lhs: Point3D, rhs: float3) -> Point3D {
     return Point3D(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + rhs.z)
   }
 
