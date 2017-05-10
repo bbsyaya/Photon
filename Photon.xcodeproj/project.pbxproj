@@ -35,6 +35,8 @@
 		5950A4201EC159EA005BB879 /* Material.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950A41F1EC159EA005BB879 /* Material.swift */; };
 		597773B51EAFA0BB0051EF1D /* Photon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 597773A11EAF9AB10051EF1D /* Photon.framework */; };
 		599175761EC2A70100FD0438 /* Math.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599175751EC2A70100FD0438 /* Math.swift */; };
+		599175781EC2B24B00FD0438 /* RenderStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599175771EC2B24B00FD0438 /* RenderStatistics.swift */; };
+		5991757A1EC2B48E00FD0438 /* RenderStatisticsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599175791EC2B48E00FD0438 /* RenderStatisticsTests.swift */; };
 		59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */; };
 		59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D3FFFC1EBFABE400D577BD /* Sampler.swift */; };
 		59E0421D1EBFD71200BA6DEC /* JitteredSamplerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */; };
@@ -107,6 +109,8 @@
 		597773B01EAFA0BB0051EF1D /* Unit Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Unit Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		597773B41EAFA0BB0051EF1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		599175751EC2A70100FD0438 /* Math.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Math.swift; sourceTree = "<group>"; };
+		599175771EC2B24B00FD0438 /* RenderStatistics.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderStatistics.swift; sourceTree = "<group>"; };
+		599175791EC2B48E00FD0438 /* RenderStatisticsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderStatisticsTests.swift; sourceTree = "<group>"; };
 		59D3FFFC1EBFABE400D577BD /* Sampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sampler.swift; sourceTree = "<group>"; };
 		59D3FFFF1EBFB0D100D577BD /* JitteredSampler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSampler.swift; sourceTree = "<group>"; };
 		59E0421C1EBFD71200BA6DEC /* JitteredSamplerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JitteredSamplerTests.swift; sourceTree = "<group>"; };
@@ -192,6 +196,7 @@
 				593D4DEC1EB56CFE00BC0591 /* Ray.swift */,
 				593D50191EB9705800BC0591 /* Renderer.swift */,
 				59E042271EC01BD900BA6DEC /* RenderingOptions.swift */,
+				599175771EC2B24B00FD0438 /* RenderStatistics.swift */,
 				593D4DF51EB6471700BC0591 /* Scene.swift */,
 			);
 			path = Core;
@@ -271,6 +276,7 @@
 				593D510F1EBAAB3500BC0591 /* OrthographicCameraTests.swift */,
 				593D4E141EB6C1BB00BC0591 /* PlaneTests.swift */,
 				593D4DF21EB56F9D00BC0591 /* PointTests.swift */,
+				599175791EC2B48E00FD0438 /* RenderStatisticsTests.swift */,
 				59E042251EC0198900BA6DEC /* SampleColorCollectionTests.swift */,
 				593D4FE61EB8E2A300BC0591 /* SceneTests.swift */,
 				593D50221EB9899F00BC0591 /* SphereTests.swift */,
@@ -478,6 +484,7 @@
 				593D4FE91EB8F1E000BC0591 /* Buffer.swift in Sources */,
 				593D510A1EBAA71900BC0591 /* Camera.swift in Sources */,
 				59D3FFFD1EBFABE400D577BD /* Sampler.swift in Sources */,
+				599175781EC2B24B00FD0438 /* RenderStatistics.swift in Sources */,
 				59E042201EBFD92A00BA6DEC /* ClosedRangeExtensions.swift in Sources */,
 				593D4DFC1EB64B5F00BC0591 /* ImageSerializable.swift in Sources */,
 				59D300001EBFB0D100D577BD /* JitteredSampler.swift in Sources */,
@@ -501,6 +508,7 @@
 				593D4FEC1EB8F30700BC0591 /* BufferTests.swift in Sources */,
 				59E0422C1EC0BB7300BA6DEC /* MockSampler.swift in Sources */,
 				593D4FE71EB8E2A300BC0591 /* SceneTests.swift in Sources */,
+				5991757A1EC2B48E00FD0438 /* RenderStatisticsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
