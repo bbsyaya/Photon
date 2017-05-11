@@ -34,7 +34,7 @@ public final class Renderer {
       }
     }
 
-    return PixelData.init(r: 0, g: 0, b: 0)
+    return PixelData.init(r: 255, g: 255, b: 255)
   }
 
 }

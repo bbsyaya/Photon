@@ -24,6 +24,7 @@ import Foundation
 public final class RenderStatistics {
   public private(set) var startTime: DispatchTime?
   public private(set) var endTime: DispatchTime?
+  public private(set) var elapsedTime: Double = -1
 
   private let semaphore = DispatchSemaphore(value: 1)
 
@@ -55,7 +56,9 @@ public final class RenderStatistics {
     guard let start = startTime, let end = endTime else { preconditionFailure("The statistics tracker should have valid start and end times.") }
 
     let difference = end.uptimeNanoseconds - start.uptimeNanoseconds
-    return Double(difference) / 1_000_000_000
+    elapsedTime = Double(difference) / 1_000_000_000
+
+    return elapsedTime
   }
 
 

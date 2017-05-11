@@ -36,7 +36,7 @@ public final class Scene {
     return pixelBuffer.height
   }
 
-  let renderingOptions: RenderingOptions
+  public let renderingOptions: RenderingOptions
 
   private var geometricObjects: [GeometricObject] = []
   private let pixelBuffer: Buffer

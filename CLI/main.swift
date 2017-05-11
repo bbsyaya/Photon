@@ -60,23 +60,15 @@ var renderingOptions = RenderingOptions(width: 600, height: 400, statistics: sta
 let scene = Scene(renderingOptions: renderingOptions)
 let path = getPath(fileName: "TestRender.png")
 
-scene.add(object: Sphere(center: Point3D(175, 400 / 2, -150), radius: 125, material: Material.blueMaterial))
-scene.add(object: Sphere(center: Point3D(425, 400 / 2, -150), radius: 125, material: Material.blueMaterial))
-
-let startTime = mach_absolute_time()
+scene.add(object: Sphere(center: Point3D(170, 400 / 2, -150), radius: 125, material: Material.blueMaterial))
+scene.add(object: Sphere(center: Point3D(430, 400 / 2, -150), radius: 125, material: Material.blueMaterial))
+scene.add(object: Sphere(center: Point3D(300, 400 + 950, -150), radius: 1000, material: Material.blueMaterial))
 
 scene.renderScene { image in
   let unwrappedImage = image!
   unwrappedImage.saveAsPNG(url: URL(fileURLWithPath: path))
 
-  let finishTime = mach_absolute_time()
-
-  let elapsed = finishTime - startTime
-  var timeBaseInfo = mach_timebase_info_data_t()
-  mach_timebase_info(&timeBaseInfo)
-
-  let nanoseconds = elapsed * UInt64(timeBaseInfo.numer) / UInt64(timeBaseInfo.denom);
-  print("Rendering complete after \(Double(nanoseconds) / 1_000_000_000) seconds")
+  print("Rendering complete after \(scene.renderingOptions.renderStatistics?.elapsedTime ?? 0) seconds")
 
   exit(0)
 }
